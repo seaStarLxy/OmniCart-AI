@@ -9,7 +9,7 @@ def security_input_node(state: AgentState):
     user_query = state["messages"][0].content if hasattr(state["messages"][0], 'content') else state["messages"][0]
     
     # 模拟拦截恶意 Prompt Injection (例如越狱词汇)
-    malicious_keywords = ["忽略之前", "越狱", "系统指令", "你是谁"]
+    malicious_keywords = ["忽略之前", "越狱", "系统指令", "你是谁", "ignore previous", "jailbreak", "system prompt", "reveal instructions"]
     is_safe = True
     
     for kw in malicious_keywords:
@@ -19,7 +19,7 @@ def security_input_node(state: AgentState):
             break
             
     if not is_safe:
-        return {"messages": ["【系统安全拦截】检测到您的输入包含潜在的不安全或违规指令，请求已终止。"], "is_safe": False}
+        return {"messages": ["[Security Blocked] Your request contains potentially unsafe or disallowed instructions, so it has been stopped."], "is_safe": False}
         
     print("  -> [Agent 5] 输入安全，放行。")
     return {"is_safe": True}
@@ -30,10 +30,17 @@ def security_output_node(state: AgentState):
     
     # 模拟 PII 脱敏：用正则把连续的11位数字（如手机号）替换为掩码
     phone_pattern = re.compile(r'\b\d{11}\b')
+    messages = list(state.get("messages", []))
+    
     if phone_pattern.search(draft_reply):
         safe_reply = phone_pattern.sub("138****XXXX", draft_reply)
-        print("  -> [Agent 5] 发现并屏蔽了潜在的隐私数据 (PII)。")
-        return {"messages": [safe_reply]}
+        print("  -> [Agent 5] Found and masked PII.")
+        import langchain_core.messages
+        if isinstance(messages[-1], str):
+            messages[-1] = safe_reply
+        else:
+            messages[-1] = type(messages[-1])(content=safe_reply)
+        return {"messages": messages}
         
-    print("  -> [Agent 5] 输出合规，放行。")
-    return {"messages": [draft_reply]} # 如果没修改，也需要返回当前消息以保持状态
+    print("  -> [Agent 5] Safe outbound.")
+    return {"messages": messages}
