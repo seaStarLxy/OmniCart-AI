@@ -22,7 +22,8 @@ def security_input_node(state: AgentState):
         return {"messages": ["[Security Blocked] Your request contains potentially unsafe or disallowed instructions, so it has been stopped."], "is_safe": False}
         
     print("  -> [Agent 5] 输入安全，放行。")
-    return {"is_safe": True}
+    trace = state.get("trace", []) + ["🛡️ Agent 5 (Input Security)"]
+    return {"is_safe": True, "trace": trace}
 
 def security_output_node(state: AgentState):
     print("\n[Agent 5 - Security (Output)] 正在进行出站隐私脱敏...")
@@ -40,7 +41,9 @@ def security_output_node(state: AgentState):
             messages[-1] = safe_reply
         else:
             messages[-1] = type(messages[-1])(content=safe_reply)
-        return {"messages": messages}
+        trace = state.get("trace", []) + ["🛡️ Agent 5 (Output Masking)"]
+    return {"messages": messages, "trace": trace}
         
     print("  -> [Agent 5] Safe outbound.")
-    return {"messages": messages}
+    trace = state.get("trace", []) + ["🛡️ Agent 5 (Output Masking)"]
+    return {"messages": messages, "trace": trace}

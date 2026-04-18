@@ -18,4 +18,5 @@ def triage_router_node(state: AgentState) -> dict:
         decision = "Agent 2 (Sales & RAG)"
 
     print(f"[Agent 1 - Router] 决定路由至: {decision}")
-    return {"next_agent": decision}
+    trace = state.get("trace", []) + ["🧭 Agent 1 (Router)"]
+    return {"next_agent": decision, "trace": trace}
