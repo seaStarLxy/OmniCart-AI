@@ -2,7 +2,17 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 from langgraph.graph import StateGraph, END
-from langchain_core.messages import HumanMessage
+from langchain_core.messages import HumanMessage, AIMessage
+from pydantic import BaseModel
+from typing import List, Optional
+
+class ChatMessagePayload(BaseModel):
+    role: str
+    content: str
+
+class ChatRequest(BaseModel):
+    query: str
+    history: Optional[List[ChatMessagePayload]] = []
 
 from core.state import AgentState
 from agents.agent1_router import triage_router_node
@@ -11,6 +21,7 @@ from agents.agent2_rag import rag_node
 from agents.agent4_empathy import empathy_node
 from agents.agent5_security import security_input_node, security_output_node # 新增
 from agents.agent6_fairness import fairness_logging_node
+from test_scenarios import ScenarioLibrary, AgentType  # 新增：场景库
 
 app = FastAPI(title="OmniCart-AI", version="0.3.0")
 app.add_middleware(
@@ -76,10 +87,28 @@ app_graph = workflow.compile()
 # FastAPI 接口
 # ==========================================
 @app.post("/chat")
-async def chat_endpoint(query: str):
-    # 转换为 LangChain 标准的消息对象
+async def chat_endpoint(request: ChatRequest = None, query: str = None):
+    actual_query = ""
+    if query:
+        actual_query = query
+    elif request and request.query:
+        actual_query = request.query
+    else:
+        actual_query = request.history[-1].content if request and request.history else ""
+        
+    langchain_msgs = []
+    if request and request.history:
+        for msg in request.history:
+            if msg.role == "user":
+                langchain_msgs.append(HumanMessage(content=msg.content))
+            else:
+                langchain_msgs.append(AIMessage(content=msg.content))
+                
+    if actual_query and (not langchain_msgs or langchain_msgs[-1].content != actual_query):
+        langchain_msgs.append(HumanMessage(content=actual_query))
+
     initial_state = {
-        "messages": [HumanMessage(content=query)],
+        "messages": langchain_msgs,
         "next_agent": ""
     }
     
@@ -95,6 +124,69 @@ async def chat_endpoint(query: str):
         "routing": result["next_agent"],
         "reply": final_message
     }
+
+@app.get("/scenarios")
+async def get_scenarios(agent: str = None, difficulty: str = None):
+    """
+    获取测试场景列表
+    
+    参数：
+    - agent: 可选，指定 Agent 类型 (Router, RAG, Order, Empathy, Security, Fairness)
+    - difficulty: 可选，指定难度 (easy, normal, hard)
+    """
+    try:
+        if agent:
+            agent_type = AgentType[agent.upper()]
+            scenarios = ScenarioLibrary.get_scenarios_by_agent(agent_type)
+        elif difficulty:
+            scenarios = ScenarioLibrary.get_scenarios_by_difficulty(difficulty)
+        else:
+            scenarios = ScenarioLibrary.list_all()
+        
+        return {
+            "status": "success",
+            "count": len(scenarios),
+            "scenarios": [
+                {
+                    "id": s.scenario_id,
+                    "category": s.category,
+                    "user_input": s.user_input,
+                    "expected_output": s.expected_output,
+                    "expected_agent": s.expected_agent.value,
+                    "test_focus": s.test_focus,
+                    "difficulty": s.difficulty
+                }
+                for s in scenarios
+            ]
+        }
+    except KeyError:
+        return {
+            "status": "error",
+            "message": f"Invalid agent type. Valid types: {', '.join([a.name for a in AgentType])}"
+        }
+
+@app.get("/scenarios/{scenario_id}")
+async def get_scenario_detail(scenario_id: str):
+    """获取单个场景的详细信息"""
+    try:
+        scenario = ScenarioLibrary.get_scenario(scenario_id)
+        return {
+            "status": "success",
+            "scenario": {
+                "id": scenario.scenario_id,
+                "category": scenario.category,
+                "user_input": scenario.user_input,
+                "expected_output": scenario.expected_output,
+                "expected_agent": scenario.expected_agent.value,
+                "test_focus": scenario.test_focus,
+                "difficulty": scenario.difficulty
+            }
+        }
+    except ValueError as e:
+        return {
+            "status": "error",
+            "message": str(e)
+        }
 
 if __name__ == "__main__":
     uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)
