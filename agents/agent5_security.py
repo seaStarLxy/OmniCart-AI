@@ -6,10 +6,10 @@ from core.state import AgentState
 
 def security_input_node(state: AgentState):
     print("\n[Agent 5 - Security (Input)] 正在进行入站安全扫描...")
-    user_query = state["messages"][0].content if hasattr(state["messages"][0], 'content') else state["messages"][0]
+    user_query = state["messages"][-1].content if hasattr(state["messages"][-1], 'content') else state["messages"][-1]
     
     # 模拟拦截恶意 Prompt Injection (例如越狱词汇)
-    malicious_keywords = ["忽略之前", "越狱", "系统指令", "你是谁", "ignore previous", "jailbreak", "system prompt", "reveal instructions"]
+    malicious_keywords = ["忽略之前", "越狱", "系统指令", "你是谁", "ignore previous", "jailbreak", "system prompt", "reveal instructions", "hack", "exploit", "attack database", "sql injection", "breach"]
     is_safe = True
     
     for kw in malicious_keywords:
@@ -22,7 +22,8 @@ def security_input_node(state: AgentState):
         return {"messages": ["[Security Blocked] Your request contains potentially unsafe or disallowed instructions, so it has been stopped."], "is_safe": False}
         
     print("  -> [Agent 5] 输入安全，放行。")
-    return {"is_safe": True}
+    trace = state.get("trace", []) + ["🛡️ Agent 5 (Input Security)"]
+    return {"is_safe": True, "trace": trace}
 
 def security_output_node(state: AgentState):
     print("\n[Agent 5 - Security (Output)] 正在进行出站隐私脱敏...")
@@ -40,7 +41,8 @@ def security_output_node(state: AgentState):
             messages[-1] = safe_reply
         else:
             messages[-1] = type(messages[-1])(content=safe_reply)
-        return {"messages": messages}
-        
-    print("  -> [Agent 5] Safe outbound.")
-    return {"messages": messages}
+    else:
+        print("  -> [Agent 5] Safe outbound.")
+
+    trace = state.get("trace", []) + ["🛡️ Agent 5 (Output Masking)"]
+    return {"messages": messages, "trace": trace}

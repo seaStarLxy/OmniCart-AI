@@ -36,4 +36,5 @@ def fairness_logging_node(state: AgentState):
         json.dump(logs, f, ensure_ascii=False, indent=4)
         
     print(f"  -> [Agent 6] 审计日志已保存至 {LOG_FILE}。")
-    return state # 仅仅是旁路记录，不改变流转状态
+    trace = state.get("trace", []) + ["📝 Agent 6 (Audit)"]
+    return {"trace": trace} # 仅仅是旁路记录，不改变流转状态

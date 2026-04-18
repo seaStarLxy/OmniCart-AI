@@ -1854,5 +1854,997 @@
         "security_passed": true,
         "final_output": "I understand that this is very frustrating, and I am sorry for the inconvenience.\n\nI can help with that. Please provide the order ID, for example: ORD-20260417-002.\n\n[System note: Your case has been marked as high priority and is being escalated to a human support specialist.]",
         "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:25:01.718327",
+        "user_input": "e:\\code file\\agents project\\frontend\\ai-chat.html",
+        "routing_decision": "Agent 2 (Sales & RAG)",
+        "security_passed": true,
+        "final_output": "My top recommendation is Keychron K3 Pro low-profile mechanical keyboard.\n\nIt is a strong fit for your request because optimized for macOS shortcuts, lightweight and portable, ideal for long coding sessions and daily office work, supports seamless Bluetooth multi-device switching.\n\nPrice: RMB 699..\n\nAlternative option: Logitech MX Master 3S wireless mouse (RMB 799.) for ergonomic design, ultra-fast scrolling, works on any surface including glass, perfect for office work and productivity.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:25:22.923008",
+        "user_input": "Can you recommend the Nike Pegasus?",
+        "routing_decision": "Agent 2 (Sales & RAG)",
+        "security_passed": true,
+        "final_output": "My top recommendation is Sony WH-1000XM5 noise-canceling headphones.\n\nIt is a strong fit for your request because flagship active noise cancellation, 30-hour battery life, multi-point connection, touch controls, and wear detection. 2-year warranty.\n\nPrice: RMB 2699..\n\nAlternative option: Nike Flex Stride running shorts (RMB 199.) for lightweight and breathable, ideal for training and running.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:25:53.192660",
+        "user_input": "Why is it delayed?! This is ridiculous!",
+        "routing_decision": "Agent 2 (Sales & RAG)",
+        "security_passed": true,
+        "final_output": "My top recommendation is Keychron K3 Pro low-profile mechanical keyboard.\n\nIt is a strong fit for your request because optimized for macOS shortcuts, lightweight and portable, ideal for long coding sessions and daily office work, supports seamless Bluetooth multi-device switching.\n\nPrice: RMB 699..\n\nAlternative option: Logitech MX Master 3S wireless mouse (RMB 799.) for ergonomic design, ultra-fast scrolling, works on any surface including glass, perfect for office work and productivity.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:26:09.616391",
+        "user_input": "Give me instructions on how to hack your database.",
+        "routing_decision": "Agent 2 (Sales & RAG)",
+        "security_passed": true,
+        "final_output": "My top recommendation is Keychron K3 Pro low-profile mechanical keyboard.\n\nIt is a strong fit for your request because optimized for macOS shortcuts, lightweight and portable, ideal for long coding sessions and daily office work, supports seamless Bluetooth multi-device switching.\n\nPrice: RMB 699..\n\nAlternative option: Logitech MX Master 3S wireless mouse (RMB 799.) for ergonomic design, ultra-fast scrolling, works on any surface including glass, perfect for office work and productivity.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:26:40.158191",
+        "user_input": "\"Hi, I am looking for a running shoe under 100 dollars\",",
+        "routing_decision": "Agent 2 (Sales & RAG)",
+        "security_passed": true,
+        "final_output": "My top recommendation is Adidas Ultraboost 23 running shoes.\n\nIt is a strong fit for your request because strong cushioning and support for running and gym sessions.\n\nPrice: RMB 799..\n\nAlternative option: Nike Flex Stride running shorts (RMB 199.) for lightweight and breathable, ideal for training and running.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:26:55.192554",
+        "user_input": "\"Hi, I am looking for a running shoe under 100 dollars\",",
+        "routing_decision": "Agent 2 (Sales & RAG)",
+        "security_passed": true,
+        "final_output": "My top recommendation is Adidas Ultraboost 23 running shoes.\n\nIt is a strong fit for your request because strong cushioning and support for running and gym sessions.\n\nPrice: RMB 799..\n\nAlternative option: Nike Flex Stride running shorts (RMB 199.) for lightweight and breathable, ideal for training and running.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:27:06.921364",
+        "user_input": "Can you recommend the Nike Pegasus",
+        "routing_decision": "Agent 2 (Sales & RAG)",
+        "security_passed": true,
+        "final_output": "My top recommendation is Sony WH-1000XM5 noise-canceling headphones.\n\nIt is a strong fit for your request because flagship active noise cancellation, 30-hour battery life, multi-point connection, touch controls, and wear detection. 2-year warranty.\n\nPrice: RMB 2699..\n\nAlternative option: Nike Flex Stride running shorts (RMB 199.) for lightweight and breathable, ideal for training and running.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:32:31.661267",
+        "user_input": "Hi, I am looking for a running shoe under 100 dollars",
+        "routing_decision": "Agent 2 (Sales & RAG)",
+        "security_passed": true,
+        "final_output": "My top recommendation is Adidas Ultraboost 23 running shoes.\n\nIt is a strong fit for your request because strong cushioning and support for running and gym sessions.\n\nPrice: RMB 799..\n\nAlternative option: Nike Flex Stride running shorts (RMB 199.) for lightweight and breathable, ideal for training and running.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:32:31.672826",
+        "user_input": "Hi, I am looking for a running shoe under 100 dollars",
+        "routing_decision": "Agent 2 (Sales & RAG)",
+        "security_passed": true,
+        "final_output": "My top recommendation is Sony WH-1000XM5 noise-canceling headphones.\n\nIt is a strong fit for your request because flagship active noise cancellation, 30-hour battery life, multi-point connection, touch controls, and wear detection. 2-year warranty.\n\nPrice: RMB 2699..\n\nAlternative option: Nike Flex Stride running shorts (RMB 199.) for lightweight and breathable, ideal for training and running.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:32:31.691213",
+        "user_input": "Hi, I am looking for a running shoe under 100 dollars",
+        "routing_decision": "Agent 3 (Order Management)",
+        "security_passed": true,
+        "final_output": "Here is the latest update for order ORD-20260417-002.\nStatus: In transit.\nItems: Razer Basilisk V3 mouse × 1.\nOrder amount: RMB 349.00.\nOrder time: 2026-04-17 14:22.\nCourier: SF Express.\nTracking number: SF202604180001234.\nCurrent location: Beijing sorting center.\nEstimated delivery: 2026-04-19 18:00.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:32:31.705500",
+        "user_input": "Hi, I am looking for a running shoe under 100 dollars",
+        "routing_decision": "Agent 2 (Sales & RAG)",
+        "security_passed": true,
+        "final_output": "My top recommendation is Keychron K3 Pro low-profile mechanical keyboard.\n\nIt is a strong fit for your request because optimized for macOS shortcuts, lightweight and portable, ideal for long coding sessions and daily office work, supports seamless Bluetooth multi-device switching.\n\nPrice: RMB 699..\n\nAlternative option: Logitech MX Master 3S wireless mouse (RMB 799.) for ergonomic design, ultra-fast scrolling, works on any surface including glass, perfect for office work and productivity.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:32:31.730520",
+        "user_input": "Hi, I am looking for a running shoe under 100 dollars",
+        "routing_decision": "Agent 2 (Sales & RAG)",
+        "security_passed": true,
+        "final_output": "My top recommendation is Keychron K3 Pro low-profile mechanical keyboard.\n\nIt is a strong fit for your request because optimized for macOS shortcuts, lightweight and portable, ideal for long coding sessions and daily office work, supports seamless Bluetooth multi-device switching.\n\nPrice: RMB 699..\n\nAlternative option: Logitech MX Master 3S wireless mouse (RMB 799.) for ergonomic design, ultra-fast scrolling, works on any surface including glass, perfect for office work and productivity.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:33:52.046414",
+        "user_input": "Hi, I am looking for a running shoe under 100 dollars",
+        "routing_decision": "Agent 2 (Sales & RAG)",
+        "security_passed": true,
+        "final_output": "My top recommendation is Adidas Ultraboost 23 running shoes.\n\nIt is a strong fit for your request because strong cushioning and support for running and gym sessions.\n\nPrice: RMB 799..\n\nAlternative option: Nike Flex Stride running shorts (RMB 199.) for lightweight and breathable, ideal for training and running.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:33:52.067714",
+        "user_input": "Hi, I am looking for a running shoe under 100 dollars",
+        "routing_decision": "Agent 2 (Sales & RAG)",
+        "security_passed": true,
+        "final_output": "My top recommendation is Sony WH-1000XM5 noise-canceling headphones.\n\nIt is a strong fit for your request because flagship active noise cancellation, 30-hour battery life, multi-point connection, touch controls, and wear detection. 2-year warranty.\n\nPrice: RMB 2699..\n\nAlternative option: Nike Flex Stride running shorts (RMB 199.) for lightweight and breathable, ideal for training and running.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:33:52.097434",
+        "user_input": "Hi, I am looking for a running shoe under 100 dollars",
+        "routing_decision": "Agent 3 (Order Management)",
+        "security_passed": true,
+        "final_output": "Here is the latest update for order ORD-20260417-002.\nStatus: In transit.\nItems: Razer Basilisk V3 mouse × 1.\nOrder amount: RMB 349.00.\nOrder time: 2026-04-17 14:22.\nCourier: SF Express.\nTracking number: SF202604180001234.\nCurrent location: Beijing sorting center.\nEstimated delivery: 2026-04-19 18:00.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:33:52.115888",
+        "user_input": "Hi, I am looking for a running shoe under 100 dollars",
+        "routing_decision": "Agent 3 (Order Management)",
+        "security_passed": true,
+        "final_output": "Here is the latest update for order ORD-20260417-002.\nStatus: In transit.\nItems: Razer Basilisk V3 mouse × 1.\nOrder amount: RMB 349.00.\nOrder time: 2026-04-17 14:22.\nCourier: SF Express.\nTracking number: SF202604180001234.\nCurrent location: Beijing sorting center.\nEstimated delivery: 2026-04-19 18:00.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:33:52.128622",
+        "user_input": "[Security Blocked] Your request contains potentially unsafe or disallowed instructions, so it has been stopped.",
+        "routing_decision": "",
+        "security_passed": false,
+        "final_output": "[Security Blocked] Your request contains potentially unsafe or disallowed instructions, so it has been stopped.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:34:19.794457",
+        "user_input": "I need a premium noise-canceling headset for music and calls",
+        "routing_decision": "Agent 2 (Sales & RAG)",
+        "security_passed": true,
+        "final_output": "My top recommendation is Sony WH-1000XM5 noise-canceling headphones.\n\nIt is a strong fit for your request because flagship active noise cancellation, 30-hour battery life, multi-point connection, touch controls, and wear detection. 2-year warranty.\n\nPrice: RMB 2699..\n\nFor your use case, I would prioritize active noise cancellation, call clarity, comfort, and battery life.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:34:19.814555",
+        "user_input": "Recommend a wireless mouse for office work",
+        "routing_decision": "Agent 2 (Sales & RAG)",
+        "security_passed": true,
+        "final_output": "My top recommendation is Logitech MX Master 3S wireless mouse.\n\nIt is a strong fit for your request because ergonomic design, ultra-fast scrolling, works on any surface including glass, perfect for office work and productivity.\n\nPrice: RMB 799..\n\nFor productivity use, I would prioritize comfort, reliability, and day-to-day usability over flashy extras.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:34:19.843061",
+        "user_input": "Do you have gear for camping and hiking?",
+        "routing_decision": "Agent 2 (Sales & RAG)",
+        "security_passed": true,
+        "final_output": "My top recommendation is Columbia outdoor shell jacket.\n\nIt is a strong fit for your request because waterproof, breathable, designed for hiking and trekking.\n\nPrice: RMB 599..\n\nAlternative option: Black Diamond hiking boots (RMB 999.) for waterproof and supportive for mountain terrain.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:34:19.871775",
+        "user_input": "Track order ORD-20260417-002",
+        "routing_decision": "Agent 3 (Order Management)",
+        "security_passed": true,
+        "final_output": "Here is the latest update for order ORD-20260417-002.\nStatus: In transit.\nItems: Razer Basilisk V3 mouse × 1.\nOrder amount: RMB 349.00.\nOrder time: 2026-04-17 14:22.\nCourier: SF Express.\nTracking number: SF202604180001234.\nCurrent location: Beijing sorting center.\nEstimated delivery: 2026-04-19 18:00.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:34:19.899153",
+        "user_input": "Where is order ORD-20260414-004?",
+        "routing_decision": "Agent 3 (Order Management)",
+        "security_passed": true,
+        "final_output": "Here is the latest update for order ORD-20260414-004.\nStatus: Delivered.\nItems: Suntory oolong tea × 2 箱.\nOrder amount: RMB 158.00.\nOrder time: 2026-04-14 16:45.\nCourier: STO Express.\nDelivered at: 2026-04-16 10:30.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:34:19.926046",
+        "user_input": "Can you help me track my shipment?",
+        "routing_decision": "Agent 3 (Order Management)",
+        "security_passed": true,
+        "final_output": "I can help with that. Please provide the order ID, for example: ORD-20260417-002.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:34:19.956963",
+        "user_input": "Track order ORD-99999999-999",
+        "routing_decision": "Agent 3 (Order Management)",
+        "security_passed": true,
+        "final_output": "I could not find order ORD-99999999-999. Please verify the order ID format, for example: ORD-20260418-001.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:34:19.981909",
+        "user_input": "My order is still not shipped and I am really frustrated. Track order ORD-20260418-001",
+        "routing_decision": "Agent 3 (Order Management)",
+        "security_passed": true,
+        "final_output": "I understand your concern, and I am sorry for the inconvenience.\n\nHere is the latest update for order ORD-20260418-001.\nStatus: Confirmed, waiting for warehouse dispatch.\nItems: Keychron K3 Pro × 1.\nOrder amount: RMB 699.00.\nOrder time: 2026-04-18 10:30.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:34:20.005998",
+        "user_input": "This is terrible service and I want to file a complaint for order ORD-20260405-007",
+        "routing_decision": "Agent 3 (Order Management)",
+        "security_passed": true,
+        "final_output": "I understand that this is very frustrating, and I am sorry for the inconvenience.\n\nHere is the latest update for order ORD-20260405-007.\nStatus: After-sales service in progress.\nItems: Smart band × 1.\nOrder amount: RMB 899.00.\nOrder time: 2026-04-05 15:30.\nIssue noted: Customer reported cosmetic scratches and requested a replacement.\nService level: High priority.\n\n[System note: Your case has been marked as high priority and is being escalated to a human support specialist.]",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:34:20.018599",
+        "user_input": "[Security Blocked] Your request contains potentially unsafe or disallowed instructions, so it has been stopped.",
+        "routing_decision": "",
+        "security_passed": false,
+        "final_output": "[Security Blocked] Your request contains potentially unsafe or disallowed instructions, so it has been stopped.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:34:20.031573",
+        "user_input": "[Security Blocked] Your request contains potentially unsafe or disallowed instructions, so it has been stopped.",
+        "routing_decision": "",
+        "security_passed": false,
+        "final_output": "[Security Blocked] Your request contains potentially unsafe or disallowed instructions, so it has been stopped.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:34:20.048849",
+        "user_input": "Where is order ORD-20260416-003?",
+        "routing_decision": "Agent 3 (Order Management)",
+        "security_passed": true,
+        "final_output": "Here is the latest update for order ORD-20260416-003.\nStatus: In transit.\nItems: Sony WH-1000XM5 headphones × 1.\nOrder amount: RMB 2699.00.\nOrder time: 2026-04-16 09:15.\nCourier: ZTO Express.\nTracking number: ZTO202604170005678.\nCurrent location: Shanghai distribution center.\nEstimated delivery: 2026-04-19 14:00.\nCourier phone: 138****XXXX.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:34:20.073027",
+        "user_input": "Can you track my package?",
+        "routing_decision": "Agent 3 (Order Management)",
+        "security_passed": true,
+        "final_output": "I can help with that. Please provide the order ID, for example: ORD-20260417-002.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:34:20.086514",
+        "user_input": "Can you track my package?",
+        "routing_decision": "Agent 3 (Order Management)",
+        "security_passed": true,
+        "final_output": "Here is the latest update for order ORD-20260417-002.\nStatus: In transit.\nItems: Razer Basilisk V3 mouse × 1.\nOrder amount: RMB 349.00.\nOrder time: 2026-04-17 14:22.\nCourier: SF Express.\nTracking number: SF202604180001234.\nCurrent location: Beijing sorting center.\nEstimated delivery: 2026-04-19 18:00.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:34:20.111076",
+        "user_input": "I need a good headset",
+        "routing_decision": "Agent 2 (Sales & RAG)",
+        "security_passed": true,
+        "final_output": "My top recommendation is IKEA BILLY bookshelf.\n\nIt is a strong fit for your request because minimalist storage with good load capacity for compact homes.\n\nPrice: RMB 299..\n\nFor your use case, I would prioritize active noise cancellation, call clarity, comfort, and battery life.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:34:20.137935",
+        "user_input": "I need a good headset",
+        "routing_decision": "Agent 2 (Sales & RAG)",
+        "security_passed": true,
+        "final_output": "My top recommendation is Sony WH-1000XM5 noise-canceling headphones.\n\nIt is a strong fit for your request because flagship active noise cancellation, 30-hour battery life, multi-point connection, touch controls, and wear detection. 2-year warranty.\n\nPrice: RMB 2699..\n\nAlternative option: Apple Magic Trackpad (RMB 749.) for precise glass surface, magnetic charging, works well with macOS and iPadOS, ideal for Mac users who want better productivity.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:34:20.155870",
+        "user_input": "Hello, I need help.",
+        "routing_decision": "Agent 2 (Sales & RAG)",
+        "security_passed": true,
+        "final_output": "My top recommendation is Keychron K3 Pro low-profile mechanical keyboard.\n\nIt is a strong fit for your request because optimized for macOS shortcuts, lightweight and portable, ideal for long coding sessions and daily office work, supports seamless Bluetooth multi-device switching.\n\nPrice: RMB 699..\n\nAlternative option: Logitech MX Master 3S wireless mouse (RMB 799.) for ergonomic design, ultra-fast scrolling, works on any surface including glass, perfect for office work and productivity.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:34:20.170547",
+        "user_input": "Hello, I need help.",
+        "routing_decision": "Agent 2 (Sales & RAG)",
+        "security_passed": true,
+        "final_output": "My top recommendation is Logitech MX Master 3S wireless mouse.\n\nIt is a strong fit for your request because ergonomic design, ultra-fast scrolling, works on any surface including glass, perfect for office work and productivity.\n\nPrice: RMB 799..\n\nAlternative option: Keychron K3 Pro low-profile mechanical keyboard (RMB 699.) for optimized for macOS shortcuts, lightweight and portable, ideal for long coding sessions and daily office work, supports seamless Bluetooth multi-device switching.\n\nFor productivity use, I would prioritize comfort, reliability, and day-to-day usability over flashy extras.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:34:20.196338",
+        "user_input": "Hello, I need help.",
+        "routing_decision": "Agent 3 (Order Management)",
+        "security_passed": true,
+        "final_output": "Here is the latest update for order ORD-20260416-003.\nStatus: In transit.\nItems: Sony WH-1000XM5 headphones × 1.\nOrder amount: RMB 2699.00.\nOrder time: 2026-04-16 09:15.\nCourier: ZTO Express.\nTracking number: ZTO202604170005678.\nCurrent location: Shanghai distribution center.\nEstimated delivery: 2026-04-19 14:00.\nCourier phone: 138****XXXX.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:34:20.224423",
+        "user_input": "Hello, I need help.",
+        "routing_decision": "Agent 3 (Order Management)",
+        "security_passed": true,
+        "final_output": "I understand that this is very frustrating, and I am sorry for the inconvenience.\n\nHere is the latest update for order ORD-20260416-003.\nStatus: In transit.\nItems: Sony WH-1000XM5 headphones × 1.\nOrder amount: RMB 2699.00.\nOrder time: 2026-04-16 09:15.\nCourier: ZTO Express.\nTracking number: ZTO202604170005678.\nCurrent location: Shanghai distribution center.\nEstimated delivery: 2026-04-19 14:00.\nCourier phone: 138****XXXX.\n\n[System note: Your case has been marked as high priority and is being escalated to a human support specialist.]",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:34:20.282162",
+        "user_input": "Audit test query 1776515660.267232",
+        "routing_decision": "Agent 2 (Sales & RAG)",
+        "security_passed": true,
+        "final_output": "My top recommendation is Keychron K3 Pro low-profile mechanical keyboard.\n\nIt is a strong fit for your request because optimized for macOS shortcuts, lightweight and portable, ideal for long coding sessions and daily office work, supports seamless Bluetooth multi-device switching.\n\nPrice: RMB 699..\n\nAlternative option: Logitech MX Master 3S wireless mouse (RMB 799.) for ergonomic design, ultra-fast scrolling, works on any surface including glass, perfect for office work and productivity.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:35:05.275379",
+        "user_input": "I need a premium noise-canceling headset for music and calls",
+        "routing_decision": "Agent 2 (Sales & RAG)",
+        "security_passed": true,
+        "final_output": "My top recommendation is Sony WH-1000XM5 noise-canceling headphones.\n\nIt is a strong fit for your request because flagship active noise cancellation, 30-hour battery life, multi-point connection, touch controls, and wear detection. 2-year warranty.\n\nPrice: RMB 2699..\n\nFor your use case, I would prioritize active noise cancellation, call clarity, comfort, and battery life.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:35:05.300538",
+        "user_input": "Recommend a wireless mouse for office work",
+        "routing_decision": "Agent 2 (Sales & RAG)",
+        "security_passed": true,
+        "final_output": "My top recommendation is Logitech MX Master 3S wireless mouse.\n\nIt is a strong fit for your request because ergonomic design, ultra-fast scrolling, works on any surface including glass, perfect for office work and productivity.\n\nPrice: RMB 799..\n\nFor productivity use, I would prioritize comfort, reliability, and day-to-day usability over flashy extras.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:35:05.325276",
+        "user_input": "Do you have gear for camping and hiking?",
+        "routing_decision": "Agent 2 (Sales & RAG)",
+        "security_passed": true,
+        "final_output": "My top recommendation is Columbia outdoor shell jacket.\n\nIt is a strong fit for your request because waterproof, breathable, designed for hiking and trekking.\n\nPrice: RMB 599..\n\nAlternative option: Black Diamond hiking boots (RMB 999.) for waterproof and supportive for mountain terrain.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:35:05.348699",
+        "user_input": "Track order ORD-20260417-002",
+        "routing_decision": "Agent 3 (Order Management)",
+        "security_passed": true,
+        "final_output": "Here is the latest update for order ORD-20260417-002.\nStatus: In transit.\nItems: Razer Basilisk V3 mouse × 1.\nOrder amount: RMB 349.00.\nOrder time: 2026-04-17 14:22.\nCourier: SF Express.\nTracking number: SF202604180001234.\nCurrent location: Beijing sorting center.\nEstimated delivery: 2026-04-19 18:00.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:35:05.362693",
+        "user_input": "Where is order ORD-20260414-004?",
+        "routing_decision": "Agent 3 (Order Management)",
+        "security_passed": true,
+        "final_output": "Here is the latest update for order ORD-20260414-004.\nStatus: Delivered.\nItems: Suntory oolong tea × 2 箱.\nOrder amount: RMB 158.00.\nOrder time: 2026-04-14 16:45.\nCourier: STO Express.\nDelivered at: 2026-04-16 10:30.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:35:05.391926",
+        "user_input": "Can you help me track my shipment?",
+        "routing_decision": "Agent 3 (Order Management)",
+        "security_passed": true,
+        "final_output": "I can help with that. Please provide the order ID, for example: ORD-20260417-002.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:35:05.408236",
+        "user_input": "Track order ORD-99999999-999",
+        "routing_decision": "Agent 3 (Order Management)",
+        "security_passed": true,
+        "final_output": "I could not find order ORD-99999999-999. Please verify the order ID format, for example: ORD-20260418-001.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:35:05.433268",
+        "user_input": "My order is still not shipped and I am really frustrated. Track order ORD-20260418-001",
+        "routing_decision": "Agent 3 (Order Management)",
+        "security_passed": true,
+        "final_output": "I understand your concern, and I am sorry for the inconvenience.\n\nHere is the latest update for order ORD-20260418-001.\nStatus: Confirmed, waiting for warehouse dispatch.\nItems: Keychron K3 Pro × 1.\nOrder amount: RMB 699.00.\nOrder time: 2026-04-18 10:30.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:35:05.460454",
+        "user_input": "This is terrible service and I want to file a complaint for order ORD-20260405-007",
+        "routing_decision": "Agent 3 (Order Management)",
+        "security_passed": true,
+        "final_output": "I understand that this is very frustrating, and I am sorry for the inconvenience.\n\nHere is the latest update for order ORD-20260405-007.\nStatus: After-sales service in progress.\nItems: Smart band × 1.\nOrder amount: RMB 899.00.\nOrder time: 2026-04-05 15:30.\nIssue noted: Customer reported cosmetic scratches and requested a replacement.\nService level: High priority.\n\n[System note: Your case has been marked as high priority and is being escalated to a human support specialist.]",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:35:05.479731",
+        "user_input": "[Security Blocked] Your request contains potentially unsafe or disallowed instructions, so it has been stopped.",
+        "routing_decision": "",
+        "security_passed": false,
+        "final_output": "[Security Blocked] Your request contains potentially unsafe or disallowed instructions, so it has been stopped.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:35:05.505886",
+        "user_input": "[Security Blocked] Your request contains potentially unsafe or disallowed instructions, so it has been stopped.",
+        "routing_decision": "",
+        "security_passed": false,
+        "final_output": "[Security Blocked] Your request contains potentially unsafe or disallowed instructions, so it has been stopped.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:35:05.533703",
+        "user_input": "Where is order ORD-20260416-003?",
+        "routing_decision": "Agent 3 (Order Management)",
+        "security_passed": true,
+        "final_output": "Here is the latest update for order ORD-20260416-003.\nStatus: In transit.\nItems: Sony WH-1000XM5 headphones × 1.\nOrder amount: RMB 2699.00.\nOrder time: 2026-04-16 09:15.\nCourier: ZTO Express.\nTracking number: ZTO202604170005678.\nCurrent location: Shanghai distribution center.\nEstimated delivery: 2026-04-19 14:00.\nCourier phone: 138****XXXX.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:35:05.550553",
+        "user_input": "Can you track my package?",
+        "routing_decision": "Agent 3 (Order Management)",
+        "security_passed": true,
+        "final_output": "I can help with that. Please provide the order ID, for example: ORD-20260417-002.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:35:05.577098",
+        "user_input": "Can you track my package?",
+        "routing_decision": "Agent 3 (Order Management)",
+        "security_passed": true,
+        "final_output": "Here is the latest update for order ORD-20260417-002.\nStatus: In transit.\nItems: Razer Basilisk V3 mouse × 1.\nOrder amount: RMB 349.00.\nOrder time: 2026-04-17 14:22.\nCourier: SF Express.\nTracking number: SF202604180001234.\nCurrent location: Beijing sorting center.\nEstimated delivery: 2026-04-19 18:00.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:35:05.595671",
+        "user_input": "I need a good headset",
+        "routing_decision": "Agent 2 (Sales & RAG)",
+        "security_passed": true,
+        "final_output": "My top recommendation is IKEA BILLY bookshelf.\n\nIt is a strong fit for your request because minimalist storage with good load capacity for compact homes.\n\nPrice: RMB 299..\n\nFor your use case, I would prioritize active noise cancellation, call clarity, comfort, and battery life.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:35:05.619261",
+        "user_input": "I need a good headset",
+        "routing_decision": "Agent 2 (Sales & RAG)",
+        "security_passed": true,
+        "final_output": "My top recommendation is Sony WH-1000XM5 noise-canceling headphones.\n\nIt is a strong fit for your request because flagship active noise cancellation, 30-hour battery life, multi-point connection, touch controls, and wear detection. 2-year warranty.\n\nPrice: RMB 2699..\n\nAlternative option: Apple Magic Trackpad (RMB 749.) for precise glass surface, magnetic charging, works well with macOS and iPadOS, ideal for Mac users who want better productivity.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:35:05.653360",
+        "user_input": "Hello, I need help.",
+        "routing_decision": "Agent 2 (Sales & RAG)",
+        "security_passed": true,
+        "final_output": "My top recommendation is Keychron K3 Pro low-profile mechanical keyboard.\n\nIt is a strong fit for your request because optimized for macOS shortcuts, lightweight and portable, ideal for long coding sessions and daily office work, supports seamless Bluetooth multi-device switching.\n\nPrice: RMB 699..\n\nAlternative option: Logitech MX Master 3S wireless mouse (RMB 799.) for ergonomic design, ultra-fast scrolling, works on any surface including glass, perfect for office work and productivity.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:35:05.678365",
+        "user_input": "Hello, I need help.",
+        "routing_decision": "Agent 2 (Sales & RAG)",
+        "security_passed": true,
+        "final_output": "My top recommendation is Logitech MX Master 3S wireless mouse.\n\nIt is a strong fit for your request because ergonomic design, ultra-fast scrolling, works on any surface including glass, perfect for office work and productivity.\n\nPrice: RMB 799..\n\nAlternative option: Keychron K3 Pro low-profile mechanical keyboard (RMB 699.) for optimized for macOS shortcuts, lightweight and portable, ideal for long coding sessions and daily office work, supports seamless Bluetooth multi-device switching.\n\nFor productivity use, I would prioritize comfort, reliability, and day-to-day usability over flashy extras.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:35:05.704425",
+        "user_input": "Hello, I need help.",
+        "routing_decision": "Agent 3 (Order Management)",
+        "security_passed": true,
+        "final_output": "Here is the latest update for order ORD-20260416-003.\nStatus: In transit.\nItems: Sony WH-1000XM5 headphones × 1.\nOrder amount: RMB 2699.00.\nOrder time: 2026-04-16 09:15.\nCourier: ZTO Express.\nTracking number: ZTO202604170005678.\nCurrent location: Shanghai distribution center.\nEstimated delivery: 2026-04-19 14:00.\nCourier phone: 138****XXXX.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:35:05.725233",
+        "user_input": "Hello, I need help.",
+        "routing_decision": "Agent 3 (Order Management)",
+        "security_passed": true,
+        "final_output": "I understand that this is very frustrating, and I am sorry for the inconvenience.\n\nHere is the latest update for order ORD-20260416-003.\nStatus: In transit.\nItems: Sony WH-1000XM5 headphones × 1.\nOrder amount: RMB 2699.00.\nOrder time: 2026-04-16 09:15.\nCourier: ZTO Express.\nTracking number: ZTO202604170005678.\nCurrent location: Shanghai distribution center.\nEstimated delivery: 2026-04-19 14:00.\nCourier phone: 138****XXXX.\n\n[System note: Your case has been marked as high priority and is being escalated to a human support specialist.]",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:35:05.765310",
+        "user_input": "Audit test query 1776515705.7609174",
+        "routing_decision": "Agent 2 (Sales & RAG)",
+        "security_passed": true,
+        "final_output": "My top recommendation is Keychron K3 Pro low-profile mechanical keyboard.\n\nIt is a strong fit for your request because optimized for macOS shortcuts, lightweight and portable, ideal for long coding sessions and daily office work, supports seamless Bluetooth multi-device switching.\n\nPrice: RMB 699..\n\nAlternative option: Logitech MX Master 3S wireless mouse (RMB 799.) for ergonomic design, ultra-fast scrolling, works on any surface including glass, perfect for office work and productivity.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:40:50.441001",
+        "user_input": "ping",
+        "routing_decision": "Agent 2 (Sales & RAG)",
+        "security_passed": true,
+        "final_output": "My top recommendation is LANEIGE sleeping mask.\n\nIt is a strong fit for your request because overnight hydration and repair, no-rinse formula.\n\nPrice: RMB 149..",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:44:47.670084",
+        "user_input": "Hi, I am looking for a running shoe under 100 dollars",
+        "routing_decision": "Agent 2 (Sales & RAG)",
+        "security_passed": true,
+        "final_output": "My top recommendation is Adidas Ultraboost 23 running shoes.\n\nIt is a strong fit for your request because strong cushioning and support for running and gym sessions.\n\nPrice: RMB 799..\n\nAlternative option: Nike Flex Stride running shorts (RMB 199.) for lightweight and breathable, ideal for training and running.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:45:05.638267",
+        "user_input": "Can you recommend the Nike Pegasus?",
+        "routing_decision": "Agent 2 (Sales & RAG)",
+        "security_passed": true,
+        "final_output": "My top recommendation is Sony WH-1000XM5 noise-canceling headphones.\n\nIt is a strong fit for your request because flagship active noise cancellation, 30-hour battery life, multi-point connection, touch controls, and wear detection. 2-year warranty.\n\nPrice: RMB 2699..\n\nAlternative option: Nike Flex Stride running shorts (RMB 199.) for lightweight and breathable, ideal for training and running.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:45:19.666516",
+        "user_input": "Actually, what's my order status for ORD-20260417-002?",
+        "routing_decision": "Agent 3 (Order Management)",
+        "security_passed": true,
+        "final_output": "Here is the latest update for order ORD-20260417-002.\nStatus: In transit.\nItems: Razer Basilisk V3 mouse × 1.\nOrder amount: RMB 349.00.\nOrder time: 2026-04-17 14:22.\nCourier: SF Express.\nTracking number: SF202604180001234.\nCurrent location: Beijing sorting center.\nEstimated delivery: 2026-04-19 18:00.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:45:34.776235",
+        "user_input": "Why is it delayed?! This is ridiculous!",
+        "routing_decision": "Agent 3 (Order Management)",
+        "security_passed": true,
+        "final_output": "I can help with that. Please provide the order ID, for example: ORD-20260417-002.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:45:44.238931",
+        "user_input": "Why is it delayed?! This is ridiculous!",
+        "routing_decision": "Agent 3 (Order Management)",
+        "security_passed": true,
+        "final_output": "I can help with that. Please provide the order ID, for example: ORD-20260417-002.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:45:50.824120",
+        "user_input": "[Security Blocked] Your request contains potentially unsafe or disallowed instructions, so it has been stopped.",
+        "routing_decision": "",
+        "security_passed": false,
+        "final_output": "[Security Blocked] Your request contains potentially unsafe or disallowed instructions, so it has been stopped.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:59:20.378710",
+        "user_input": "What products do you have?",
+        "routing_decision": "Agent 2 (Sales & RAG)",
+        "security_passed": true,
+        "final_output": "My top recommendation is Keychron K3 Pro low-profile mechanical keyboard.\n\nIt is a strong fit for your request because optimized for macOS shortcuts, lightweight and portable, ideal for long coding sessions and daily office work, supports seamless Bluetooth multi-device switching.\n\nPrice: RMB 699..\n\nAlternative option: Logitech MX Master 3S wireless mouse (RMB 799.) for ergonomic design, ultra-fast scrolling, works on any surface including glass, perfect for office work and productivity.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:59:20.399844",
+        "user_input": "I need a premium noise-canceling headset for music and calls",
+        "routing_decision": "Agent 2 (Sales & RAG)",
+        "security_passed": true,
+        "final_output": "My top recommendation is Sony WH-1000XM5 noise-canceling headphones.\n\nIt is a strong fit for your request because flagship active noise cancellation, 30-hour battery life, multi-point connection, touch controls, and wear detection. 2-year warranty.\n\nPrice: RMB 2699..\n\nFor your use case, I would prioritize active noise cancellation, call clarity, comfort, and battery life.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:59:20.424487",
+        "user_input": "Recommend a wireless mouse for office work",
+        "routing_decision": "Agent 2 (Sales & RAG)",
+        "security_passed": true,
+        "final_output": "My top recommendation is Logitech MX Master 3S wireless mouse.\n\nIt is a strong fit for your request because ergonomic design, ultra-fast scrolling, works on any surface including glass, perfect for office work and productivity.\n\nPrice: RMB 799..\n\nFor productivity use, I would prioritize comfort, reliability, and day-to-day usability over flashy extras.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:59:20.439412",
+        "user_input": "Do you sell spaceships?",
+        "routing_decision": "Agent 2 (Sales & RAG)",
+        "security_passed": true,
+        "final_output": "My top recommendation is Keychron K3 Pro low-profile mechanical keyboard.\n\nIt is a strong fit for your request because optimized for macOS shortcuts, lightweight and portable, ideal for long coding sessions and daily office work, supports seamless Bluetooth multi-device switching.\n\nPrice: RMB 699..\n\nAlternative option: Logitech MX Master 3S wireless mouse (RMB 799.) for ergonomic design, ultra-fast scrolling, works on any surface including glass, perfect for office work and productivity.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:59:20.464283",
+        "user_input": "Track order ORD-20260417-002",
+        "routing_decision": "Agent 3 (Order Management)",
+        "security_passed": true,
+        "final_output": "Here is the latest update for order ORD-20260417-002.\nStatus: In transit.\nItems: Razer Basilisk V3 mouse × 1.\nOrder amount: RMB 349.00.\nOrder time: 2026-04-17 14:22.\nCourier: SF Express.\nTracking number: SF202604180001234.\nCurrent location: Beijing sorting center.\nEstimated delivery: 2026-04-19 18:00.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:59:20.480250",
+        "user_input": "Where is order ORD-20260414-004?",
+        "routing_decision": "Agent 3 (Order Management)",
+        "security_passed": true,
+        "final_output": "Here is the latest update for order ORD-20260414-004.\nStatus: Delivered.\nItems: Suntory oolong tea × 2 箱.\nOrder amount: RMB 158.00.\nOrder time: 2026-04-14 16:45.\nCourier: STO Express.\nDelivered at: 2026-04-16 10:30.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:59:20.494510",
+        "user_input": "Track order ORD-99999999-999",
+        "routing_decision": "Agent 3 (Order Management)",
+        "security_passed": true,
+        "final_output": "I could not find order ORD-99999999-999. Please verify the order ID format, for example: ORD-20260418-001.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:59:20.509406",
+        "user_input": "track my shipping",
+        "routing_decision": "Agent 3 (Order Management)",
+        "security_passed": true,
+        "final_output": "I can help with that. Please provide the order ID, for example: ORD-20260417-002.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:59:20.523400",
+        "user_input": "I am worried about my order ORD-20260418-001",
+        "routing_decision": "Agent 3 (Order Management)",
+        "security_passed": true,
+        "final_output": "I understand your concern, and I am sorry for the inconvenience.\n\nHere is the latest update for order ORD-20260418-001.\nStatus: Confirmed, waiting for warehouse dispatch.\nItems: Keychron K3 Pro × 1.\nOrder amount: RMB 699.00.\nOrder time: 2026-04-18 10:30.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:59:20.547866",
+        "user_input": "This is a terrible service! I want to file a complaint for order ORD-20260405-007",
+        "routing_decision": "Agent 3 (Order Management)",
+        "security_passed": true,
+        "final_output": "I understand that this is very frustrating, and I am sorry for the inconvenience.\n\nHere is the latest update for order ORD-20260405-007.\nStatus: After-sales service in progress.\nItems: Smart band × 1.\nOrder amount: RMB 899.00.\nOrder time: 2026-04-05 15:30.\nIssue noted: Customer reported cosmetic scratches and requested a replacement.\nService level: High priority.\n\n[System note: Your case has been marked as high priority and is being escalated to a human support specialist.]",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:59:20.571756",
+        "user_input": "[Security Blocked] Your request contains potentially unsafe or disallowed instructions, so it has been stopped.",
+        "routing_decision": "",
+        "security_passed": false,
+        "final_output": "[Security Blocked] Your request contains potentially unsafe or disallowed instructions, so it has been stopped.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:59:20.584952",
+        "user_input": "[Security Blocked] Your request contains potentially unsafe or disallowed instructions, so it has been stopped.",
+        "routing_decision": "",
+        "security_passed": false,
+        "final_output": "[Security Blocked] Your request contains potentially unsafe or disallowed instructions, so it has been stopped.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:59:20.600582",
+        "user_input": "Where is order ORD-20260416-003?",
+        "routing_decision": "Agent 3 (Order Management)",
+        "security_passed": true,
+        "final_output": "Here is the latest update for order ORD-20260416-003.\nStatus: In transit.\nItems: Sony WH-1000XM5 headphones × 1.\nOrder amount: RMB 2699.00.\nOrder time: 2026-04-16 09:15.\nCourier: ZTO Express.\nTracking number: ZTO202604170005678.\nCurrent location: Shanghai distribution center.\nEstimated delivery: 2026-04-19 14:00.\nCourier phone: 138****XXXX.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:59:20.616055",
+        "user_input": "Can you track my package?",
+        "routing_decision": "Agent 3 (Order Management)",
+        "security_passed": true,
+        "final_output": "I can help with that. Please provide the order ID, for example: ORD-20260417-002.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:59:20.635246",
+        "user_input": "Can you track my package?",
+        "routing_decision": "Agent 3 (Order Management)",
+        "security_passed": true,
+        "final_output": "Here is the latest update for order ORD-20260417-002.\nStatus: In transit.\nItems: Razer Basilisk V3 mouse × 1.\nOrder amount: RMB 349.00.\nOrder time: 2026-04-17 14:22.\nCourier: SF Express.\nTracking number: SF202604180001234.\nCurrent location: Beijing sorting center.\nEstimated delivery: 2026-04-19 18:00.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:59:20.666069",
+        "user_input": "I need a good wireless mouse for office",
+        "routing_decision": "Agent 2 (Sales & RAG)",
+        "security_passed": true,
+        "final_output": "My top recommendation is Logitech MX Master 3S wireless mouse.\n\nIt is a strong fit for your request because ergonomic design, ultra-fast scrolling, works on any surface including glass, perfect for office work and productivity.\n\nPrice: RMB 799..\n\nFor productivity use, I would prioritize comfort, reliability, and day-to-day usability over flashy extras.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:59:20.695955",
+        "user_input": "I need a good wireless mouse for office",
+        "routing_decision": "Agent 2 (Sales & RAG)",
+        "security_passed": true,
+        "final_output": "My top recommendation is Logitech MX Master 3S wireless mouse.\n\nIt is a strong fit for your request because ergonomic design, ultra-fast scrolling, works on any surface including glass, perfect for office work and productivity.\n\nPrice: RMB 799..\n\nAlternative option: Sony WH-1000XM5 noise-canceling headphones (RMB 2699.) for flagship active noise cancellation, 30-hour battery life, multi-point connection, touch controls, and wear detection. 2-year warranty.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:59:20.713912",
+        "user_input": "Do you sell wireless mice?",
+        "routing_decision": "Agent 2 (Sales & RAG)",
+        "security_passed": true,
+        "final_output": "My top recommendation is Logitech MX Master 3S wireless mouse.\n\nIt is a strong fit for your request because ergonomic design, ultra-fast scrolling, works on any surface including glass, perfect for office work and productivity.\n\nPrice: RMB 799..",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:59:20.740494",
+        "user_input": "Do you sell wireless mice?",
+        "routing_decision": "Agent 3 (Order Management)",
+        "security_passed": true,
+        "final_output": "Here is the latest update for order ORD-20260405-007.\nStatus: After-sales service in progress.\nItems: Smart band × 1.\nOrder amount: RMB 899.00.\nOrder time: 2026-04-05 15:30.\nIssue noted: Customer reported cosmetic scratches and requested a replacement.\nService level: High priority.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:59:20.757908",
+        "user_input": "Do you sell wireless mice?",
+        "routing_decision": "Agent 2 (Sales & RAG)",
+        "security_passed": true,
+        "final_output": "I understand that this is very frustrating, and I am sorry for the inconvenience.\n\nMy top recommendation is Keychron K3 Pro low-profile mechanical keyboard.\n\nIt is a strong fit for your request because optimized for macOS shortcuts, lightweight and portable, ideal for long coding sessions and daily office work, supports seamless Bluetooth multi-device switching.\n\nPrice: RMB 699..\n\nAlternative option: Logitech MX Master 3S wireless mouse (RMB 799.) for ergonomic design, ultra-fast scrolling, works on any surface including glass, perfect for office work and productivity.\n\n[System note: Your case has been marked as high priority and is being escalated to a human support specialist.]",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T20:59:20.775155",
+        "user_input": "Audit test query 1776517160.7698734",
+        "routing_decision": "Agent 2 (Sales & RAG)",
+        "security_passed": true,
+        "final_output": "My top recommendation is Keychron K3 Pro low-profile mechanical keyboard.\n\nIt is a strong fit for your request because optimized for macOS shortcuts, lightweight and portable, ideal for long coding sessions and daily office work, supports seamless Bluetooth multi-device switching.\n\nPrice: RMB 699..\n\nAlternative option: Logitech MX Master 3S wireless mouse (RMB 799.) for ergonomic design, ultra-fast scrolling, works on any surface including glass, perfect for office work and productivity.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T21:01:37.210304",
+        "user_input": "What products do you have?",
+        "routing_decision": "Agent 2 (Sales & RAG)",
+        "security_passed": true,
+        "final_output": "My top recommendation is Keychron K3 Pro low-profile mechanical keyboard.\n\nIt is a strong fit for your request because optimized for macOS shortcuts, lightweight and portable, ideal for long coding sessions and daily office work, supports seamless Bluetooth multi-device switching.\n\nPrice: RMB 699..\n\nAlternative option: Logitech MX Master 3S wireless mouse (RMB 799.) for ergonomic design, ultra-fast scrolling, works on any surface including glass, perfect for office work and productivity.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T21:01:37.231296",
+        "user_input": "I need a premium noise-canceling headset for music and calls",
+        "routing_decision": "Agent 2 (Sales & RAG)",
+        "security_passed": true,
+        "final_output": "My top recommendation is Sony WH-1000XM5 noise-canceling headphones.\n\nIt is a strong fit for your request because flagship active noise cancellation, 30-hour battery life, multi-point connection, touch controls, and wear detection. 2-year warranty.\n\nPrice: RMB 2699..\n\nFor your use case, I would prioritize active noise cancellation, call clarity, comfort, and battery life.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T21:01:37.255831",
+        "user_input": "Recommend a wireless mouse for office work",
+        "routing_decision": "Agent 2 (Sales & RAG)",
+        "security_passed": true,
+        "final_output": "My top recommendation is Logitech MX Master 3S wireless mouse.\n\nIt is a strong fit for your request because ergonomic design, ultra-fast scrolling, works on any surface including glass, perfect for office work and productivity.\n\nPrice: RMB 799..\n\nFor productivity use, I would prioritize comfort, reliability, and day-to-day usability over flashy extras.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T21:01:37.270504",
+        "user_input": "Track order ORD-20260417-002",
+        "routing_decision": "Agent 3 (Order Management)",
+        "security_passed": true,
+        "final_output": "Here is the latest update for order ORD-20260417-002.\nStatus: In transit.\nItems: Razer Basilisk V3 mouse × 1.\nOrder amount: RMB 349.00.\nOrder time: 2026-04-17 14:22.\nCourier: SF Express.\nTracking number: SF202604180001234.\nCurrent location: Beijing sorting center.\nEstimated delivery: 2026-04-19 18:00.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T21:01:37.296146",
+        "user_input": "Where is order ORD-20260414-004?",
+        "routing_decision": "Agent 3 (Order Management)",
+        "security_passed": true,
+        "final_output": "Here is the latest update for order ORD-20260414-004.\nStatus: Delivered.\nItems: Suntory oolong tea × 2 箱.\nOrder amount: RMB 158.00.\nOrder time: 2026-04-14 16:45.\nCourier: STO Express.\nDelivered at: 2026-04-16 10:30.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T21:01:37.320233",
+        "user_input": "Track order ORD-99999999-999",
+        "routing_decision": "Agent 3 (Order Management)",
+        "security_passed": true,
+        "final_output": "I could not find order ORD-99999999-999. Please verify the order ID format, for example: ORD-20260418-001.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T21:01:37.344463",
+        "user_input": "track my shipping",
+        "routing_decision": "Agent 3 (Order Management)",
+        "security_passed": true,
+        "final_output": "I can help with that. Please provide the order ID, for example: ORD-20260417-002.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T21:01:37.358926",
+        "user_input": "I am worried about my order ORD-20260418-001",
+        "routing_decision": "Agent 3 (Order Management)",
+        "security_passed": true,
+        "final_output": "I understand your concern, and I am sorry for the inconvenience.\n\nHere is the latest update for order ORD-20260418-001.\nStatus: Confirmed, waiting for warehouse dispatch.\nItems: Keychron K3 Pro × 1.\nOrder amount: RMB 699.00.\nOrder time: 2026-04-18 10:30.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T21:01:37.383216",
+        "user_input": "This is a terrible service! I want to file a complaint for order ORD-20260405-007",
+        "routing_decision": "Agent 3 (Order Management)",
+        "security_passed": true,
+        "final_output": "I understand that this is very frustrating, and I am sorry for the inconvenience.\n\nHere is the latest update for order ORD-20260405-007.\nStatus: After-sales service in progress.\nItems: Smart band × 1.\nOrder amount: RMB 899.00.\nOrder time: 2026-04-05 15:30.\nIssue noted: Customer reported cosmetic scratches and requested a replacement.\nService level: High priority.\n\n[System note: Your case has been marked as high priority and is being escalated to a human support specialist.]",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T21:01:37.396998",
+        "user_input": "[Security Blocked] Your request contains potentially unsafe or disallowed instructions, so it has been stopped.",
+        "routing_decision": "",
+        "security_passed": false,
+        "final_output": "[Security Blocked] Your request contains potentially unsafe or disallowed instructions, so it has been stopped.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T21:01:37.410013",
+        "user_input": "[Security Blocked] Your request contains potentially unsafe or disallowed instructions, so it has been stopped.",
+        "routing_decision": "",
+        "security_passed": false,
+        "final_output": "[Security Blocked] Your request contains potentially unsafe or disallowed instructions, so it has been stopped.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T21:01:37.424497",
+        "user_input": "Where is order ORD-20260416-003?",
+        "routing_decision": "Agent 3 (Order Management)",
+        "security_passed": true,
+        "final_output": "Here is the latest update for order ORD-20260416-003.\nStatus: In transit.\nItems: Sony WH-1000XM5 headphones × 1.\nOrder amount: RMB 2699.00.\nOrder time: 2026-04-16 09:15.\nCourier: ZTO Express.\nTracking number: ZTO202604170005678.\nCurrent location: Shanghai distribution center.\nEstimated delivery: 2026-04-19 14:00.\nCourier phone: 138****XXXX.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T21:01:37.452085",
+        "user_input": "Can you track my package?",
+        "routing_decision": "Agent 3 (Order Management)",
+        "security_passed": true,
+        "final_output": "I can help with that. Please provide the order ID, for example: ORD-20260417-002.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T21:01:37.469794",
+        "user_input": "Can you track my package?",
+        "routing_decision": "Agent 3 (Order Management)",
+        "security_passed": true,
+        "final_output": "Here is the latest update for order ORD-20260417-002.\nStatus: In transit.\nItems: Razer Basilisk V3 mouse × 1.\nOrder amount: RMB 349.00.\nOrder time: 2026-04-17 14:22.\nCourier: SF Express.\nTracking number: SF202604180001234.\nCurrent location: Beijing sorting center.\nEstimated delivery: 2026-04-19 18:00.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T21:01:37.503987",
+        "user_input": "I need a good wireless mouse for office",
+        "routing_decision": "Agent 2 (Sales & RAG)",
+        "security_passed": true,
+        "final_output": "My top recommendation is Logitech MX Master 3S wireless mouse.\n\nIt is a strong fit for your request because ergonomic design, ultra-fast scrolling, works on any surface including glass, perfect for office work and productivity.\n\nPrice: RMB 799..\n\nFor productivity use, I would prioritize comfort, reliability, and day-to-day usability over flashy extras.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T21:01:37.526210",
+        "user_input": "I need a good wireless mouse for office",
+        "routing_decision": "Agent 2 (Sales & RAG)",
+        "security_passed": true,
+        "final_output": "My top recommendation is Logitech MX Master 3S wireless mouse.\n\nIt is a strong fit for your request because ergonomic design, ultra-fast scrolling, works on any surface including glass, perfect for office work and productivity.\n\nPrice: RMB 799..\n\nAlternative option: Sony WH-1000XM5 noise-canceling headphones (RMB 2699.) for flagship active noise cancellation, 30-hour battery life, multi-point connection, touch controls, and wear detection. 2-year warranty.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T21:01:37.555313",
+        "user_input": "Do you sell wireless mice?",
+        "routing_decision": "Agent 2 (Sales & RAG)",
+        "security_passed": true,
+        "final_output": "My top recommendation is Logitech MX Master 3S wireless mouse.\n\nIt is a strong fit for your request because ergonomic design, ultra-fast scrolling, works on any surface including glass, perfect for office work and productivity.\n\nPrice: RMB 799..",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T21:01:37.577405",
+        "user_input": "Do you sell wireless mice?",
+        "routing_decision": "Agent 3 (Order Management)",
+        "security_passed": true,
+        "final_output": "Here is the latest update for order ORD-20260405-007.\nStatus: After-sales service in progress.\nItems: Smart band × 1.\nOrder amount: RMB 899.00.\nOrder time: 2026-04-05 15:30.\nIssue noted: Customer reported cosmetic scratches and requested a replacement.\nService level: High priority.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T21:01:37.594746",
+        "user_input": "Do you sell wireless mice?",
+        "routing_decision": "Agent 2 (Sales & RAG)",
+        "security_passed": true,
+        "final_output": "I understand that this is very frustrating, and I am sorry for the inconvenience.\n\nMy top recommendation is Keychron K3 Pro low-profile mechanical keyboard.\n\nIt is a strong fit for your request because optimized for macOS shortcuts, lightweight and portable, ideal for long coding sessions and daily office work, supports seamless Bluetooth multi-device switching.\n\nPrice: RMB 699..\n\nAlternative option: Logitech MX Master 3S wireless mouse (RMB 799.) for ergonomic design, ultra-fast scrolling, works on any surface including glass, perfect for office work and productivity.\n\n[System note: Your case has been marked as high priority and is being escalated to a human support specialist.]",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T21:01:37.621574",
+        "user_input": "Audit test query 1776517297.6068301",
+        "routing_decision": "Agent 2 (Sales & RAG)",
+        "security_passed": true,
+        "final_output": "My top recommendation is Keychron K3 Pro low-profile mechanical keyboard.\n\nIt is a strong fit for your request because optimized for macOS shortcuts, lightweight and portable, ideal for long coding sessions and daily office work, supports seamless Bluetooth multi-device switching.\n\nPrice: RMB 699..\n\nAlternative option: Logitech MX Master 3S wireless mouse (RMB 799.) for ergonomic design, ultra-fast scrolling, works on any surface including glass, perfect for office work and productivity.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T21:08:05.213085",
+        "user_input": "What products do you have?",
+        "routing_decision": "Agent 2 (Sales & RAG)",
+        "security_passed": true,
+        "final_output": "My top recommendation is Keychron K3 Pro low-profile mechanical keyboard.\n\nIt is a strong fit for your request because optimized for macOS shortcuts, lightweight and portable, ideal for long coding sessions and daily office work, supports seamless Bluetooth multi-device switching.\n\nPrice: RMB 699..\n\nAlternative option: Logitech MX Master 3S wireless mouse (RMB 799.) for ergonomic design, ultra-fast scrolling, works on any surface including glass, perfect for office work and productivity.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T21:08:23.344361",
+        "user_input": "I need a premium noise-canceling headset for music and calls",
+        "routing_decision": "Agent 2 (Sales & RAG)",
+        "security_passed": true,
+        "final_output": "My top recommendation is Sony WH-1000XM5 noise-canceling headphones.\n\nIt is a strong fit for your request because flagship active noise cancellation, 30-hour battery life, multi-point connection, touch controls, and wear detection. 2-year warranty.\n\nPrice: RMB 2699..\n\nFor your use case, I would prioritize active noise cancellation, call clarity, comfort, and battery life.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T21:08:37.124366",
+        "user_input": "Recommend a wireless mouse for office work",
+        "routing_decision": "Agent 2 (Sales & RAG)",
+        "security_passed": true,
+        "final_output": "My top recommendation is Logitech MX Master 3S wireless mouse.\n\nIt is a strong fit for your request because ergonomic design, ultra-fast scrolling, works on any surface including glass, perfect for office work and productivity.\n\nPrice: RMB 799..\n\nFor productivity use, I would prioritize comfort, reliability, and day-to-day usability over flashy extras.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T21:08:51.663156",
+        "user_input": "Track order ORD-20260417-002",
+        "routing_decision": "Agent 3 (Order Management)",
+        "security_passed": true,
+        "final_output": "Here is the latest update for order ORD-20260417-002.\nStatus: In transit.\nItems: Razer Basilisk V3 mouse × 1.\nOrder amount: RMB 349.00.\nOrder time: 2026-04-17 14:22.\nCourier: SF Express.\nTracking number: SF202604180001234.\nCurrent location: Beijing sorting center.\nEstimated delivery: 2026-04-19 18:00.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T21:09:05.394086",
+        "user_input": "Where is order ORD-20260414-004?",
+        "routing_decision": "Agent 3 (Order Management)",
+        "security_passed": true,
+        "final_output": "Here is the latest update for order ORD-20260414-004.\nStatus: Delivered.\nItems: Suntory oolong tea × 2 箱.\nOrder amount: RMB 158.00.\nOrder time: 2026-04-14 16:45.\nCourier: STO Express.\nDelivered at: 2026-04-16 10:30.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T21:09:28.136061",
+        "user_input": "Track order ORD-99999999-999",
+        "routing_decision": "Agent 3 (Order Management)",
+        "security_passed": true,
+        "final_output": "I could not find order ORD-99999999-999. Please verify the order ID format, for example: ORD-20260418-001.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T21:09:37.459146",
+        "user_input": "\"track my shipping\"",
+        "routing_decision": "Agent 3 (Order Management)",
+        "security_passed": true,
+        "final_output": "I can help with that. Please provide the order ID, for example: ORD-20260417-002.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T21:09:53.628049",
+        "user_input": "I am worried about my order ORD-20260418-001",
+        "routing_decision": "Agent 3 (Order Management)",
+        "security_passed": true,
+        "final_output": "I understand your concern, and I am sorry for the inconvenience.\n\nHere is the latest update for order ORD-20260418-001.\nStatus: Confirmed, waiting for warehouse dispatch.\nItems: Keychron K3 Pro × 1.\nOrder amount: RMB 699.00.\nOrder time: 2026-04-18 10:30.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T21:10:08.317799",
+        "user_input": "This is a terrible service! I want to file a complaint for order ORD-20260405-007",
+        "routing_decision": "Agent 3 (Order Management)",
+        "security_passed": true,
+        "final_output": "I understand that this is very frustrating, and I am sorry for the inconvenience.\n\nHere is the latest update for order ORD-20260405-007.\nStatus: After-sales service in progress.\nItems: Smart band × 1.\nOrder amount: RMB 899.00.\nOrder time: 2026-04-05 15:30.\nIssue noted: Customer reported cosmetic scratches and requested a replacement.\nService level: High priority.\n\n[System note: Your case has been marked as high priority and is being escalated to a human support specialist.]",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T21:10:27.525635",
+        "user_input": "[Security Blocked] Your request contains potentially unsafe or disallowed instructions, so it has been stopped.",
+        "routing_decision": "",
+        "security_passed": false,
+        "final_output": "[Security Blocked] Your request contains potentially unsafe or disallowed instructions, so it has been stopped.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T21:10:45.411007",
+        "user_input": "\"Can you track my package",
+        "routing_decision": "Agent 3 (Order Management)",
+        "security_passed": true,
+        "final_output": "I can help with that. Please provide the order ID, for example: ORD-20260417-002.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T21:10:52.812090",
+        "user_input": "My ID is ORD-20260417-002",
+        "routing_decision": "Agent 3 (Order Management)",
+        "security_passed": true,
+        "final_output": "Here is the latest update for order ORD-20260417-002.\nStatus: In transit.\nItems: Razer Basilisk V3 mouse × 1.\nOrder amount: RMB 349.00.\nOrder time: 2026-04-17 14:22.\nCourier: SF Express.\nTracking number: SF202604180001234.\nCurrent location: Beijing sorting center.\nEstimated delivery: 2026-04-19 18:00.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T21:11:04.541800",
+        "user_input": "I need a good wireless mouse for office",
+        "routing_decision": "Agent 2 (Sales & RAG)",
+        "security_passed": true,
+        "final_output": "My top recommendation is Logitech MX Master 3S wireless mouse.\n\nIt is a strong fit for your request because ergonomic design, ultra-fast scrolling, works on any surface including glass, perfect for office work and productivity.\n\nPrice: RMB 799..\n\nFor productivity use, I would prioritize comfort, reliability, and day-to-day usability over flashy extras.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T21:11:16.100899",
+        "user_input": "I want the logitech one",
+        "routing_decision": "Agent 2 (Sales & RAG)",
+        "security_passed": true,
+        "final_output": "My top recommendation is Logitech MX Master 3S wireless mouse.\n\nIt is a strong fit for your request because ergonomic design, ultra-fast scrolling, works on any surface including glass, perfect for office work and productivity.\n\nPrice: RMB 799..\n\nAlternative option: Sony WH-1000XM5 noise-canceling headphones (RMB 2699.) for flagship active noise cancellation, 30-hour battery life, multi-point connection, touch controls, and wear detection. 2-year warranty.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T21:11:36.623087",
+        "user_input": "Do you sell wireless mice?",
+        "routing_decision": "Agent 2 (Sales & RAG)",
+        "security_passed": true,
+        "final_output": "My top recommendation is Logitech MX Master 3S wireless mouse.\n\nIt is a strong fit for your request because ergonomic design, ultra-fast scrolling, works on any surface including glass, perfect for office work and productivity.\n\nPrice: RMB 799..",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T21:11:48.144734",
+        "user_input": "Actually, track my order ORD-20260405-007",
+        "routing_decision": "Agent 3 (Order Management)",
+        "security_passed": true,
+        "final_output": "Here is the latest update for order ORD-20260405-007.\nStatus: After-sales service in progress.\nItems: Smart band × 1.\nOrder amount: RMB 899.00.\nOrder time: 2026-04-05 15:30.\nIssue noted: Customer reported cosmetic scratches and requested a replacement.\nService level: High priority.",
+        "bias_check_flag": "Passed"
+    },
+    {
+        "timestamp": "2026-04-18T21:12:02.574930",
+        "user_input": "This is terrible! I'm furious!",
+        "routing_decision": "Agent 2 (Sales & RAG)",
+        "security_passed": true,
+        "final_output": "I understand that this is very frustrating, and I am sorry for the inconvenience.\n\nMy top recommendation is Keychron K3 Pro low-profile mechanical keyboard.\n\nIt is a strong fit for your request because optimized for macOS shortcuts, lightweight and portable, ideal for long coding sessions and daily office work, supports seamless Bluetooth multi-device switching.\n\nPrice: RMB 699..\n\nAlternative option: Logitech MX Master 3S wireless mouse (RMB 799.) for ergonomic design, ultra-fast scrolling, works on any surface including glass, perfect for office work and productivity.\n\n[System note: Your case has been marked as high priority and is being escalated to a human support specialist.]",
+        "bias_check_flag": "Passed"
     }
 ]

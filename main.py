@@ -109,7 +109,9 @@ async def chat_endpoint(request: ChatRequest = None, query: str = None):
 
     initial_state = {
         "messages": langchain_msgs,
-        "next_agent": ""
+        "next_agent": "",
+        "is_safe": True,
+        "trace": []
     }
     
     # 执行状态图
@@ -121,8 +123,9 @@ async def chat_endpoint(request: ChatRequest = None, query: str = None):
     
     return {
         "status": "success",
-        "routing": result["next_agent"],
-        "reply": final_message
+        "routing": result.get("next_agent"),
+        "reply": final_message,
+        "trace": result.get("trace", [])
     }
 
 @app.get("/scenarios")

@@ -100,9 +100,11 @@ def order_node(state: AgentState):
             break
 
     if not match:
-        return {"messages": messages + [AIMessage(content="I can help with that. Please provide the order ID, for example: ORD-20260417-002.")]}
+        trace = state.get("trace", []) + ["📦 Agent 3 (Order)"]
+        return {"messages": messages + [AIMessage(content="I can help with that. Please provide the order ID, for example: ORD-20260417-002.")], "trace": trace}
 
     order_id = match.group(0).upper()
     order_info = get_order_details(order_id)
     reply = _format_order_reply(order_id, order_info)
-    return {"messages": messages + [AIMessage(content=reply)]}
+    trace = state.get("trace", []) + ["📦 Agent 3 (Order)"]
+    return {"messages": messages + [AIMessage(content=reply)], "trace": trace}

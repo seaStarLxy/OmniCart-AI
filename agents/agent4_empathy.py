@@ -51,4 +51,5 @@ def empathy_node(state: AgentState):
         )
 
     print("  -> [Agent 4] 润色完成。")
-    return {"messages": state.get("messages", []) + [AIMessage(content=polished_reply)]}
+    trace = state.get("trace", []) + ["❤️ Agent 4 (Empathy)"]
+    return {"messages": state.get("messages", []) + [AIMessage(content=polished_reply)], "trace": trace}

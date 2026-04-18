@@ -9,7 +9,8 @@ def triage_router_node(state: AgentState) -> dict:
     has_order_id = bool(re.search(r"ord-\d{8}-\d{3}", normalized_input, re.IGNORECASE))
     order_keywords = [
         "订单", "退款", "退货", "物流", "发货", "快递", "售后",
-        "order", "refund", "return", "shipping", "delivery", "track", "tracking", "after-sales"
+        "order", "refund", "return", "shipping", "delivery", "track", "tracking", "after-sales",
+        "delayed", "delay", "shipment", "package", "courier", "dispatch"
     ]
 
     if has_order_id or any(keyword in normalized_input for keyword in order_keywords):
@@ -18,4 +19,5 @@ def triage_router_node(state: AgentState) -> dict:
         decision = "Agent 2 (Sales & RAG)"
 
     print(f"[Agent 1 - Router] 决定路由至: {decision}")
-    return {"next_agent": decision}
+    trace = state.get("trace", []) + ["🧭 Agent 1 (Router)"]
+    return {"next_agent": decision, "trace": trace}
