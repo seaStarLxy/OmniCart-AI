@@ -18,7 +18,7 @@ def init_mock_vector_db():
     print("  -> [Vector DB] 2. 准备初始化 Embeddings 对象...")
     embeddings = OpenAIEmbeddings(
         openai_api_base="https://api.siliconflow.cn/v1",
-        openai_api_key="sk-dikkdnbuvkhmsvyoruibkhgdsobbvhbiaxlulopbrxziijwt", 
+        openai_api_key="apikey", 
         model="BAAI/bge-m3",
         check_embedding_ctx_length=False,
         # 【新增】：强制设置 15 秒超时，并且只重试 1 次，打破无限卡死

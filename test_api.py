@@ -3,7 +3,7 @@ import requests
 
 url = "https://api.siliconflow.cn/v1/embeddings"
 headers = {
-    "Authorization": "Bearer sk-dikkdnbuvkhmsvyoruibkhgdsobbvhbiaxlulopbrxziijwt", # 你的 Key
+    "Authorization": "Bearer apikey", # 你的 Key
     "Content-Type": "application/json"
 }
 data = {
