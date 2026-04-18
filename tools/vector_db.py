@@ -3,9 +3,9 @@ from langchain_openai import OpenAIEmbeddings
 from langchain_core.documents import Document
 
 def init_mock_vector_db():
-    print("  -> [Vector DB] 正在初始化本地商品知识库...")
+    print("  -> [Vector DB] 1. 开始初始化本地商品知识库...")
     
-    # 模拟几条电商商品数据
+    # 这里放回了你原本的 4 条模拟商品数据
     mock_products = [
         "Keychron K3 Pro 矮轴机械键盘：完美适配 macOS 快捷键，轻薄便携，适合长期敲代码和日常办公，支持蓝牙多设备无缝切换。",
         "雷蛇巴塞利斯蛇 V3 电竞鼠标：具备 26000 DPI 高精度传感器，RGB 幻彩灯效，11个可编程按键，非常适合用来玩《原神》或《GTA V》等对操作要求高的游戏。",
@@ -15,14 +15,24 @@ def init_mock_vector_db():
     
     docs = [Document(page_content=text) for text in mock_products]
     
-    # 使用 OpenAI 的 Embedding 模型将文本向量化并存入 Chroma
-    # 注意：这里会消耗微量的 OpenAI API 额度
-    vectorstore = Chroma.from_documents(
-        documents=docs, 
-        embedding=OpenAIEmbeddings(model="text-embedding-ada-002")
+    print("  -> [Vector DB] 2. 准备初始化 Embeddings 对象...")
+    embeddings = OpenAIEmbeddings(
+        openai_api_base="https://api.siliconflow.cn/v1",
+        openai_api_key="sk-dikkdnbuvkhmsvyoruibkhgdsobbvhbiaxlulopbrxziijwt", 
+        model="BAAI/bge-m3",
+        check_embedding_ctx_length=False,
+        # 【新增】：强制设置 15 秒超时，并且只重试 1 次，打破无限卡死
+        timeout=15,
+        max_retries=1
     )
     
-    # 返回一个检索器，设置每次召回最相关的 2 条数据
+    print("  -> [Vector DB] 3. 开始调用 API 将数据向量化并写入 Chroma...")
+    vectorstore = Chroma.from_documents(
+        documents=docs, 
+        embedding=embeddings
+    )
+    
+    print("  -> [Vector DB] 4. 向量库初始化完成！")
     return vectorstore.as_retriever(search_kwargs={"k": 2})
 
 # 全局单例检索器

@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 from langgraph.graph import StateGraph, END
 from langchain_core.messages import HumanMessage
@@ -12,7 +13,13 @@ from agents.agent5_security import security_input_node, security_output_node # �
 from agents.agent6_fairness import fairness_logging_node
 
 app = FastAPI(title="OmniCart-AI", version="0.3.0")
-
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  
+    allow_credentials=True,
+    allow_methods=["*"],  
+    allow_headers=["*"],  
+)
 # ==========================================
 # 构建 LangGraph 状态图
 # ==========================================
@@ -79,8 +86,9 @@ async def chat_endpoint(query: str):
     # 执行状态图
     result = app_graph.invoke(initial_state)
     
-    # 获取最后一条消息作为输出
-    final_message = result["messages"][-1].content
+    # 获取最后一条消息作为输出（增加容错：判断是对象还是纯字符串）
+    last_msg = result["messages"][-1]
+    final_message = last_msg.content if hasattr(last_msg, 'content') else last_msg
     
     return {
         "status": "success",

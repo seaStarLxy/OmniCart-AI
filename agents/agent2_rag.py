@@ -4,8 +4,13 @@ from core.state import AgentState
 from tools.vector_db import product_retriever
 
 # 初始化大模型
-llm = ChatOpenAI(temperature=0.3, model="gpt-4o-mini")
-
+llm = ChatOpenAI(
+    temperature=0.3, # 注意：每个 Agent 原来的 temperature 不同，请保留原值 (Agent 4 是 0.5，Agent 2 是 0.3)
+    model="Qwen/Qwen2.5-7B-Instruct", # 推荐使用 Qwen 2.5 或其他支持 Tool Calling 的优秀开源模型
+    openai_api_base="https://api.siliconflow.cn/v1",
+    openai_api_key="sk-dikkdnbuvkhmsvyoruibkhgdsobbvhbiaxlulopbrxziijwt", # 这里填入你在 vector_db.py 中使用的密钥
+    max_tokens=2048 # 建议加上最大 token 限制以防截断
+)
 def rag_node(state: AgentState):
     print("\n[Agent 2 - Sales & RAG] 接管对话，正在检索商品库...")
     
