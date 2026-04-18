@@ -101,7 +101,7 @@ def order_node(state: AgentState):
 
     if not match:
         trace = state.get("trace", []) + ["📦 Agent 3 (Order)"]
-    return {"messages": messages + [AIMessage(content="I can help with that. Please provide the order ID, for example: ORD-20260417-002.")], "trace": trace}
+        return {"messages": messages + [AIMessage(content="I can help with that. Please provide the order ID, for example: ORD-20260417-002.")], "trace": trace}
 
     order_id = match.group(0).upper()
     order_info = get_order_details(order_id)

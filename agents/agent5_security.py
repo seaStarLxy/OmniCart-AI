@@ -6,10 +6,10 @@ from core.state import AgentState
 
 def security_input_node(state: AgentState):
     print("\n[Agent 5 - Security (Input)] 正在进行入站安全扫描...")
-    user_query = state["messages"][0].content if hasattr(state["messages"][0], 'content') else state["messages"][0]
+    user_query = state["messages"][-1].content if hasattr(state["messages"][-1], 'content') else state["messages"][-1]
     
     # 模拟拦截恶意 Prompt Injection (例如越狱词汇)
-    malicious_keywords = ["忽略之前", "越狱", "系统指令", "你是谁", "ignore previous", "jailbreak", "system prompt", "reveal instructions"]
+    malicious_keywords = ["忽略之前", "越狱", "系统指令", "你是谁", "ignore previous", "jailbreak", "system prompt", "reveal instructions", "hack", "exploit", "attack database", "sql injection", "breach"]
     is_safe = True
     
     for kw in malicious_keywords:
@@ -41,9 +41,8 @@ def security_output_node(state: AgentState):
             messages[-1] = safe_reply
         else:
             messages[-1] = type(messages[-1])(content=safe_reply)
-        trace = state.get("trace", []) + ["🛡️ Agent 5 (Output Masking)"]
-    return {"messages": messages, "trace": trace}
-        
-    print("  -> [Agent 5] Safe outbound.")
+    else:
+        print("  -> [Agent 5] Safe outbound.")
+
     trace = state.get("trace", []) + ["🛡️ Agent 5 (Output Masking)"]
     return {"messages": messages, "trace": trace}

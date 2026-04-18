@@ -72,4 +72,5 @@ def rag_node(state: AgentState):
     print(f"  -> [Agent 2] 召回上下文: \n{context}")
 
     reply = _build_recommendation(user_query, retrieved_docs)
-    return {"messages": state.get("messages", []) + [AIMessage(content=reply)]}
+    trace = state.get("trace", []) + ["🔍 Agent 2 (Sales & RAG)"]
+    return {"messages": state.get("messages", []) + [AIMessage(content=reply)], "trace": trace}

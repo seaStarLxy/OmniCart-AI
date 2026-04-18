@@ -101,5 +101,5 @@ def fallback_retrieve_products(query: str, k: int = 2):
         threshold = max(1, best_score - 2)
         selected = [item for item in ranked if item[0] >= threshold][:k]
     else:
-        selected = [(0, product) for product in MOCK_PRODUCTS[:k]]
+        selected = []
     return [Document(page_content=product) for _, product in selected]
