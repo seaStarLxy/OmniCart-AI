@@ -6,3 +6,7 @@
 # 忽略所有的 .pyc, .pyo, .pyd 文件 (编译后的字节码文件)
 *.py[cod]
 *$py.class
+
+all_code_summary.txt
+
+log/

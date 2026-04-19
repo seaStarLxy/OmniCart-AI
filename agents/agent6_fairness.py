@@ -20,6 +20,8 @@ def fairness_logging_node(state: AgentState):
         "final_output": final_reply,
         "bias_check_flag": "Passed" # 演示用：默认公平性审查通过
     }
+
+    os.makedirs(os.path.dirname(LOG_FILE), exist_ok=True)
     
     # 追加写入本地 JSON 文件
     logs = []
