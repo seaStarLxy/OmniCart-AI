@@ -7,7 +7,7 @@ def is_binary(file_path):
         with open(file_path, 'tr') as check_file:
             check_file.read(1024)
             return False
-    except:
+    except Exception:
         return True
 
 def merge_files(source_dir, output_file, exclude_dirs=None):
@@ -67,6 +67,6 @@ if __name__ == "__main__":
     TARGET = os.getenv("TARGET_DIR", ".")
     OUTPUT = os.getenv("OUTPUT_FILE", "summary.txt")
     
-    print(f"🚀 开始合并 (包含 CI/CD 配置，排除 frontend，且排除脚本自身)...")
+    print("🚀 开始合并 (包含 CI/CD 配置，排除 frontend，且排除脚本自身)...")
     count = merge_files(TARGET, OUTPUT)
     print(f"\n✨ 完成！共处理 {count} 个文件。")
