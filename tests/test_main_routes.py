@@ -1,5 +1,6 @@
 from main import check_safety, route_decision
 
+
 def test_check_safety():
     """测试安防网关的条件路由"""
     # 1. 安全请求进入主业务

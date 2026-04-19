@@ -1,4 +1,5 @@
-from typing import TypedDict, List, Any
+from typing import Any, List, TypedDict
+
 
 class AgentState(TypedDict):
     trace: List[str]

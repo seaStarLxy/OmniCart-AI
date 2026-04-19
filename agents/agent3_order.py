@@ -1,8 +1,9 @@
 import re
+
 from langchain_core.messages import AIMessage
+
 from core.state import AgentState
 from tools.mock_apis import get_order_details
-
 
 STATUS_MAP = {
     "待出库": "Confirmed, waiting for warehouse dispatch",

@@ -1,7 +1,10 @@
 import json
-from langchain_core.messages import HumanMessage, AIMessage
-from agents.agent6_fairness import fairness_logging_node
+
+from langchain_core.messages import AIMessage, HumanMessage
+
 import agents.agent6_fairness as agent6
+from agents.agent6_fairness import fairness_logging_node
+
 
 def test_fairness_logging_node(monkeypatch, tmp_path):
     """测试审计日志能否正确创建并写入文件"""

@@ -1,6 +1,7 @@
 import os
 from pathlib import Path
 
+
 def merge_python_files(source_dir, output_file, exclude_dirs=None):
     """
     将 source_dir 目录下所有的 .py 文件合并到 output_file 中。

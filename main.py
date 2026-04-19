@@ -1,10 +1,12 @@
+from typing import List, Optional
+
+import uvicorn
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-import uvicorn
-from langgraph.graph import StateGraph, END
-from langchain_core.messages import HumanMessage, AIMessage
+from langchain_core.messages import AIMessage, HumanMessage
+from langgraph.graph import END, StateGraph
 from pydantic import BaseModel
-from typing import List, Optional
+
 
 class ChatMessagePayload(BaseModel):
     role: str
@@ -14,15 +16,15 @@ class ChatRequest(BaseModel):
     query: str
     history: Optional[List[ChatMessagePayload]] = []
 
-from core.state import AgentState
 from agents.agent1_router import triage_router_node
-from agents.agent3_order import order_node
 from agents.agent2_rag import rag_node
+from agents.agent3_order import order_node
 from agents.agent4_empathy import empathy_node
 from agents.agent5_security import security_input_node, security_output_node
 from agents.agent6_fairness import fairness_logging_node
-from test_scenarios import ScenarioLibrary, AgentType
 from core.config import settings
+from core.state import AgentState
+from test_scenarios import AgentType, ScenarioLibrary
 
 app = FastAPI(title=settings.PROJECT_NAME, version=settings.VERSION)
 app.add_middleware(

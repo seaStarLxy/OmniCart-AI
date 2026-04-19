@@ -1,6 +1,9 @@
 from unittest.mock import patch
-from langchain_core.messages import HumanMessage, AIMessage
+
+from langchain_core.messages import AIMessage, HumanMessage
+
 from agents.agent4_empathy import empathy_node
+
 
 @patch("agents.agent4_empathy.llm")
 def test_empathy_node_success(mock_llm):

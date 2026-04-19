@@ -1,6 +1,10 @@
-from langchain_core.messages import HumanMessage
-from agents.agent3_order import _translate_text, _format_order_reply, order_node
 from unittest.mock import patch
+
+from langchain_core.messages import HumanMessage
+
+from agents.agent3_order import (_format_order_reply, _translate_text,
+                                 order_node)
+
 
 def test_translate_text():
     """测试文本中英替换逻辑"""

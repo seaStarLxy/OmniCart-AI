@@ -1,5 +1,7 @@
 import os
+
 from pydantic_settings import BaseSettings, SettingsConfigDict
+
 
 class Settings(BaseSettings):
     # 项目基础信息

@@ -1,5 +1,6 @@
 from langchain_core.tools import tool
 
+
 @tool
 def check_order_status(order_id: str) -> str:
     """当用户询问订单、物流状态、退换政策时使用此工具。必须传入订单号 order_id。"""

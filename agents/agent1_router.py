@@ -1,8 +1,8 @@
-from langchain_openai import ChatOpenAI
 from langchain_core.messages import HumanMessage, SystemMessage
-from core.state import AgentState
+from langchain_openai import ChatOpenAI
 
 from core.config import settings
+from core.state import AgentState
 
 llm = ChatOpenAI(
     model=settings.LLM_MODEL_NAME,

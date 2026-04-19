@@ -1,6 +1,9 @@
 from unittest.mock import patch
-from langchain_core.messages import HumanMessage, AIMessage
+
+from langchain_core.messages import AIMessage, HumanMessage
+
 from agents.agent1_router import triage_router_node
+
 
 # 注意这里去掉了 .invoke，直接 mock 整个 llm 对象
 @patch("agents.agent1_router.llm")

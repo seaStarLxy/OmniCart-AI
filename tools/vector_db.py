@@ -1,7 +1,8 @@
 import os
+
 from langchain_community.vectorstores import Chroma
-from langchain_openai import OpenAIEmbeddings
 from langchain_core.documents import Document
+from langchain_openai import OpenAIEmbeddings
 
 API_KEY = os.getenv("SILICONFLOW_API_KEY") or os.getenv("OPENAI_API_KEY") or "apikey"
 

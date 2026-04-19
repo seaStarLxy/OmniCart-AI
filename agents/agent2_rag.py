@@ -1,7 +1,9 @@
 import re
+
 from langchain_core.messages import AIMessage
+
 from core.state import AgentState
-from tools.vector_db import product_retriever, fallback_retrieve_products
+from tools.vector_db import fallback_retrieve_products, product_retriever
 
 
 def _extract_price(product_text: str) -> str:

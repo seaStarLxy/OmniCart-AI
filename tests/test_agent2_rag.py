@@ -1,5 +1,8 @@
 from langchain_core.documents import Document
-from agents.agent2_rag import _build_recommendation, _extract_price, _extract_name
+
+from agents.agent2_rag import (_build_recommendation, _extract_name,
+                               _extract_price)
+
 
 def test_extract_helpers():
     """测试内部提取文本的辅助函数"""
