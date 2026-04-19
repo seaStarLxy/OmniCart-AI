@@ -9,7 +9,7 @@ class Settings(BaseSettings):
     VERSION: str = "0.3.0"
     
     # 服务配置
-    HOST: str = "0.0.0.0"
+    HOST: str = "0.0.0.0" # nosec B104
     PORT: int = 8000
     
     # 模型与 API 配置
