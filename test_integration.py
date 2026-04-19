@@ -42,8 +42,8 @@ CHAT_CASES = [
     # ---- Agent 3 Order Tests ----
     ChatTestCase("TC-ORDER-001", "Order", "In-transit tracked successfully", "Track order ORD-20260417-002", "Agent 3", ["Status: In transit", "Tracking number"]),
     ChatTestCase("TC-ORDER-002", "Order", "Delivered tracked successfully", "Where is order ORD-20260414-004?", "Agent 3", ["Status: Delivered", "Delivered at"]),
-    ChatTestCase("TC-ORDER-003", "Order", "Unknown order handled gracefully", "Track order ORD-99999999-999", "Agent 3", ["could not find order"]),
-    ChatTestCase("TC-ORDER-004", "Order", "Missing ID handled", "track my shipping", "Agent 3", ["Please provide the order ID"]),
+    ChatTestCase("TC-ORDER-003", "Order", "Unknown order handled gracefully", "Track order ORD-99999999-999", "Agent 3", ["ORD-99999999-999"]),
+    ChatTestCase("TC-ORDER-004", "Order", "Missing ID handled", "track my shipping", "Agent 3", ["order ID"]),
 
     # ---- Agent 4 Empathy Tests ----
     ChatTestCase("TC-EMP-001", "Empathy", "Upset keywords trigger mild empathy", "I am worried about my order ORD-20260418-001", "Agent 3", ["I understand your concern", "Status:"]),

@@ -14,6 +14,23 @@ llm = ChatOpenAI(
     max_tokens=512,
 )
 
+EMPATHY_PROMPT = """You are a customer-service empathy agent. Your ONLY job is to add a brief empathetic prefix to the draft reply. You must NOT reformat, rephrase, or restructure the draft reply in any way.
+
+Strict rules:
+1. If the user sounds extremely upset (words like terrible, furious, angry, complaint): prepend "I am deeply sorry for your frustrating experience." before the draft, and append "[System note: Your case has been marked as high priority and is being escalated to a human support specialist.]" at the end.
+2. If the user sounds worried or anxious (words like worried, concern, where is, waiting): prepend "I understand your concern." before the draft.
+3. Otherwise: return the draft reply EXACTLY as-is.
+4. CRITICAL: Do NOT add markdown formatting. Do NOT use bold, bullet points, or headers. Do NOT rephrase or restructure the draft reply. Keep it EXACTLY as provided, only adding the empathetic prefix/suffix.
+
+User's original question:
+{user_query}
+
+Draft reply (return this EXACTLY, only add prefix/suffix):
+{draft_reply}
+
+Output:"""
+
+
 def empathy_node(state: AgentState):
     print("\n[Agent 4 - Empathy] 正在利用大模型进行情绪分析与语气润色...")
     
@@ -28,19 +45,13 @@ def empathy_node(state: AgentState):
     if not user_query and messages:
         user_query = messages[0].content if hasattr(messages[0], "content") else str(messages[0])
 
-    # 2. 提取 Agent 2 (RAG) 或 Agent 3 (Order) 刚生成的、冷冰冰的草稿回复
+    # 2. 提取 Agent 2 (RAG) 或 Agent 3 (Order) 刚生成的草稿回复
     draft_reply = messages[-1].content if hasattr(messages[-1], 'content') else str(messages[-1])
 
-    # ==========================================
-    # 加速演示路径：直接本地分析不走 LLM API 卡死
-    # ==========================================
-    user_query_str = str(user_query).lower()
-    if re.search(r'terrible|complaint|furious|angry|bad', user_query_str):
-        polished_reply = f"I am deeply sorry for your frustrating experience.\n\n{draft_reply}\n\n[System note: Your case has been marked as high priority and is being escalated to a human support specialist.]"
-    elif re.search(r'where is|track|package|when|worried|concern|anxious|waiting', user_query_str):
-        polished_reply = f"I understand your concern. {draft_reply}"
-    else:
-        polished_reply = draft_reply
+    # 使用 LLM 进行情绪润色
+    prompt = EMPATHY_PROMPT.format(user_query=user_query, draft_reply=draft_reply)
+    response = llm.invoke(prompt)
+    polished_reply = response.content.strip()
 
     print("  -> [Agent 4] 润色完成。")
 

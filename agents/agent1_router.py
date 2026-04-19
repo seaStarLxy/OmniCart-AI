@@ -13,20 +13,32 @@ llm = ChatOpenAI(
     max_tokens=64,
 )
 
+ROUTER_PROMPT = """You are a routing agent for an e-commerce support system.
+Analyze the user's message and decide which agent should handle it.
+
+Rules:
+- If the message is about tracking, returning, or managing an order (contains order IDs, shipping, delivery, package status, etc.), respond with exactly: Agent 3
+- For everything else (product questions, recommendations, general inquiries), respond with exactly: Agent 2
+
+Respond with ONLY "Agent 2" or "Agent 3", nothing else.
+
+User message: {user_input}"""
+
+
 def triage_router_node(state: AgentState) -> dict:
     user_input = state["messages"][-1]
-    # 提取用户真正说的文本
     content = user_input.content if hasattr(user_input, "content") else str(user_input)
     print(f"\n[Agent 1 - Router] 正在利用大模型分析输入意图: {content}")
 
-    # ==========================================
-    # 为了演示视频毫无延迟，使用正则模拟大模型的瞬间输出（加速）
-    # ==========================================
-    if re.search(r'ord-|order|track|return|package', str(content), re.IGNORECASE):
-        print("  -> [Agent 1] 大模型原始输出: Agent 3")
+    prompt = ROUTER_PROMPT.format(user_input=content)
+    response = llm.invoke(prompt)
+    decision_text = response.content.strip()
+    print(f"  -> [Agent 1] 大模型原始输出: {decision_text}")
+
+    # 解析 LLM 输出，容错处理
+    if "3" in decision_text:
         decision = "Agent 3 (Order Management)"
     else:
-        print("  -> [Agent 1] 大模型原始输出: Agent 2")
         decision = "Agent 2 (Sales & RAG)"
 
     print(f"[Agent 1 - Router] 最终决定路由至: {decision}")
