@@ -22,3 +22,5 @@ export SILICONFLOW_API_KEY=""
 pytest tests/ -v
 
 ruff check --fix .
+
+isort .

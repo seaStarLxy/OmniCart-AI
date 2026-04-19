@@ -1,13 +1,29 @@
+# ==========================================
+# 1. 所有的 import 必须严格放在文件的最上面
+# ==========================================
 from typing import List, Optional
 
-import uvicorn
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from langchain_core.messages import AIMessage, HumanMessage
-from langgraph.graph import END, StateGraph
+import uvicorn
+from langgraph.graph import StateGraph, END
+from langchain_core.messages import HumanMessage, AIMessage
 from pydantic import BaseModel
 
+# 引入内部模块
+from core.state import AgentState
+from core.config import settings
+from agents.agent1_router import triage_router_node
+from agents.agent2_rag import rag_node
+from agents.agent3_order import order_node
+from agents.agent4_empathy import empathy_node
+from agents.agent5_security import security_input_node, security_output_node
+from agents.agent6_fairness import fairness_logging_node
+from test_scenarios import ScenarioLibrary, AgentType
 
+# ==========================================
+# 2. 所有 import 结束之后，才能开始写类和变量
+# ==========================================
 class ChatMessagePayload(BaseModel):
     role: str
     content: str
@@ -16,17 +32,8 @@ class ChatRequest(BaseModel):
     query: str
     history: Optional[List[ChatMessagePayload]] = []
 
-from agents.agent1_router import triage_router_node
-from agents.agent2_rag import rag_node
-from agents.agent3_order import order_node
-from agents.agent4_empathy import empathy_node
-from agents.agent5_security import security_input_node, security_output_node
-from agents.agent6_fairness import fairness_logging_node
-from core.config import settings
-from core.state import AgentState
-from test_scenarios import AgentType, ScenarioLibrary
-
 app = FastAPI(title=settings.PROJECT_NAME, version=settings.VERSION)
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],  
