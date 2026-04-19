@@ -1,6 +1,11 @@
 # ==========================================
 # 1. 所有的 import 必须严格放在文件的最上面
 # ==========================================
+import os
+from dotenv import load_dotenv
+# 必须在这最前面加载环境变量，否则 LangSmith 看不到配置
+load_dotenv(os.path.join(os.path.dirname(__file__), '.env'))
+
 from typing import List, Optional
 
 from fastapi import FastAPI
@@ -31,6 +36,7 @@ class ChatMessagePayload(BaseModel):
 class ChatRequest(BaseModel):
     query: str
     history: Optional[List[ChatMessagePayload]] = []
+    session_id: Optional[str] = "default_session"
 
 app = FastAPI(title=settings.PROJECT_NAME, version=settings.VERSION)
 
@@ -91,7 +97,10 @@ workflow.add_edge("sec_out", "logger")
 # 写完日志 -> 流程结束
 workflow.add_edge("logger", END)
 
-app_graph = workflow.compile()
+# 编译包含会话记忆 (Checkpoint) 机制的图
+from langgraph.checkpoint.memory import MemorySaver
+memory_saver = MemorySaver()
+app_graph = workflow.compile(checkpointer=memory_saver)
 
 # ==========================================
 # FastAPI 接口
@@ -124,8 +133,9 @@ async def chat_endpoint(request: ChatRequest = None, query: str = None):
         "trace": []
     }
     
-    # 执行状态图
-    result = app_graph.invoke(initial_state)
+    # 执行状态图，传入线程ID来实现上下文隔离的记忆机制 (Multi-turn Memory)
+    config = {"configurable": {"thread_id": request.session_id if getattr(request, "session_id", None) else "default_session"}}
+    result = app_graph.invoke(initial_state, config=config)
     
     # 获取最后一条消息作为输出（增加容错：判断是对象还是纯字符串）
     last_msg = result["messages"][-1]

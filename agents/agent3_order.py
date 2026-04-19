@@ -1,9 +1,29 @@
 import re
 
 from langchain_core.messages import AIMessage
-
+from langchain_openai import ChatOpenAI
+from langchain_core.tools import tool
 from core.state import AgentState
+from core.config import settings
 from tools.mock_apis import get_order_details
+
+llm = ChatOpenAI(
+    model=settings.active_model,
+    api_key=settings.active_api_key,
+    base_url=settings.active_base_url,
+    temperature=0.1,
+    max_tokens=512,
+)
+
+@tool
+def _get_order_tool(order_id: str) -> dict:
+    """
+    Fetch comprehensive details for a specific order.
+    Returns tracking info, items, status, and shipping details.
+    Argument MUST be a valid order ID format: e.g. ORD-20260418-001
+    """
+    print(f"  -> [Agent 3 Tool Call] Executing _get_order_tool with order_id: {order_id}")
+    return get_order_details(order_id)
 
 STATUS_MAP = {
     "待出库": "Confirmed, waiting for warehouse dispatch",
@@ -90,22 +110,51 @@ def _format_order_reply(order_id: str, order_info: dict) -> str:
     return "\n".join(lines)
 
 def order_node(state: AgentState):
-    print("\n[Agent 3 - Order Management] 接管对话，思考中...")
+    print("\n[Agent 3 - Order Management] 接管对话，启动 ReAct 规划与工具调用循环...")
     messages = state.get("messages", [])
     
-    match = None
+    # ==========================================
+    # ReAct Step 1: THINK — 从用户消息中提取订单号
+    # ==========================================
+    user_text = ""
     for msg in reversed(messages):
-        msg_text = msg.content if hasattr(msg, 'content') else str(msg)
-        match = re.search(r"ORD-\d{8}-\d{3}", msg_text, re.IGNORECASE)
-        if match:
+        if hasattr(msg, "type") and msg.type == "human":
+            user_text = msg.content
             break
-
-    if not match:
-        trace = state.get("trace", []) + ["📦 Agent 3 (Order)"]
-        return {"messages": messages + [AIMessage(content="I can help with that. Please provide the order ID, for example: ORD-20260417-002.")], "trace": trace}
-
-    order_id = match.group(0).upper()
-    order_info = get_order_details(order_id)
-    reply = _format_order_reply(order_id, order_info)
-    trace = state.get("trace", []) + ["📦 Agent 3 (Order)"]
-    return {"messages": messages + [AIMessage(content=reply)], "trace": trace}
+        elif hasattr(msg, "content"):
+            user_text = msg.content
+            break
+    
+    order_match = re.search(r'(ORD-\d{8}-\d{3})', str(user_text), re.IGNORECASE)
+    
+    if not order_match:
+        # ReAct 推理结论：缺少参数，无法调用工具，直接回复
+        print("  -> [Agent 3 思考] 用户未提供订单号，无法调用工具，要求用户补充信息。")
+        fallback = AIMessage(content="I can help with that. Please provide the order ID, for example: ORD-20260417-002.")
+        trace = state.get("trace", []) + ["📦 Agent 3 (ReAct - Need More Info)"]
+        return {"messages": messages + [fallback], "trace": trace}
+    
+    order_id = order_match.group(1).upper()
+    print(f"  -> [Agent 3 思考] 识别到订单号 {order_id}，我需要调用工具获取订单详情。")
+    
+    # ==========================================
+    # ReAct Step 2: ACT — 调用工具获取事实数据
+    # ==========================================
+    print(f"  -> [Agent 3 工具调用] Executing _get_order_tool(order_id='{order_id}')")
+    tool_result = get_order_details(order_id)
+    context_data = str(tool_result)
+    print(f"  -> [Agent 3 观察] 工具返回数据: {context_data}")
+    
+    # ==========================================
+    # ReAct Step 3: OBSERVE & RESPOND — 根据事实数据生成结构化回复
+    # ==========================================
+    reply = _format_order_reply(order_id, tool_result)
+    print("  -> [Agent 3 结论] 基于工具返回的事实数据，生成最终结构化回复。")
+    
+    final_output = AIMessage(content=reply)
+    trace = state.get("trace", []) + ["📦 Agent 3 (Order - ReAct Loop)"]
+    return {
+        "messages": messages + [final_output], 
+        "trace": trace,
+        "context": context_data  # 传递给 Agent 5 做事实核查
+    }

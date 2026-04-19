@@ -10,7 +10,7 @@ from typing import List, Optional
 
 import requests
 
-BASE_URL = "http://127.0.0.1:8001"
+BASE_URL = "http://127.0.0.1:8000"
 TIMEOUT = 30
 
 @dataclass

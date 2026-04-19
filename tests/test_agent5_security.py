@@ -30,10 +30,7 @@ def test_security_input_fallback_injection(mock_llm):
     result = security_input_node(state)
     
     assert result["is_safe"] is False
-    assert "Security Blocked" in result["messages"][0]
-
-# ==========================================
-# 测试 Output Node
+    assert "Security Blocked" in result["messages"][-1].content
 # ==========================================
 
 @patch("agents.agent5_security.llm")

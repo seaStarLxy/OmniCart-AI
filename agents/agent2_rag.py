@@ -36,7 +36,7 @@ def _build_recommendation(query: str, docs) -> str:
     primary_price = _extract_price(primary)
 
     lines = [
-        f"My top recommendation is {primary_name}.",
+        f"Based on your request, here is the product I recommend: {primary_name}.",
         f"It is a strong fit for your request because {primary_features}.",
         f"Price: {primary_price}."
     ]
@@ -56,24 +56,57 @@ def _build_recommendation(query: str, docs) -> str:
     return "\n\n".join(lines)
 
 
-def rag_node(state: AgentState):
-    print("\n[Agent 2 - Sales & RAG] 接管对话，正在检索商品库...")
+# Step 1: Planning Loop - 规划检索策略 (ReAct思想的微型体现)
+def _plan_search_strategy(user_query: str) -> dict:
+    """分析用户查询，规划检索范围和降级策略 (Planning Loop)"""
+    strategy = {
+        "is_technical": any(keyword in user_query.lower() for keyword in ["keyboard", "mouse", "office"]),
+        "is_budget_conscious": any(keyword in user_query.lower() for keyword in ["cheap", "budget", "便宜", "预算", "性价比"]),
+        "search_count": 3 if "比较" in user_query or "alternatives" in user_query.lower() else 2
+    }
+    return strategy
+
+def _execute_and_evaluate(user_query: str, strategy: dict) -> list:
+    """执行带有反馈循环的条件检索"""
+    # 执行初次检索
+    docs = fallback_retrieve_products(user_query, k=strategy["search_count"])
     
-    # 获取用户最后一句查询
+    # 评估循环：如果用户在意预算，但检索出来的内容没有价格信息，则必须扩大检索范围
+    if strategy["is_budget_conscious"] and not docs:
+        print("  -> [Agent 2] 检索评估未命中，触发重新规划检索关键词...")
+        # 降级或调整关键词
+        return fallback_retrieve_products("廉价 " + user_query, k=2)
+    return docs
+
+def rag_node(state: AgentState):
+    print("\n[Agent 2 - Sales & RAG] 接管对话，启动商品发现与规划循环...")
+    
     user_query = state["messages"][-1].content
     
-    # 1. 检索 (Retrieval)
+    # 1. 规划循环 (Planning)
+    strategy = _plan_search_strategy(user_query)
+    print(f"  -> [Agent 2] 规划搜索策略: {strategy}")
+    
+    # 2. 执行与评估循环 (Execution & Evaluation)
     try:
-        retrieved_docs = fallback_retrieve_products(user_query)
+        retrieved_docs = _execute_and_evaluate(user_query, strategy)
         if not retrieved_docs:
             retriever = get_product_retriever()
             retrieved_docs = retriever.invoke(user_query)
     except Exception as error:
-        print(f"  -> [Agent 2] Retrieval failed ({error}), using lexical fallback.")
+        print(f"  -> [Agent 2] 检索失败 ({error})，进入降级搜索回调。")
         retrieved_docs = fallback_retrieve_products(user_query)
+        
     context = "\n".join([doc.page_content for doc in retrieved_docs])
     print(f"  -> [Agent 2] 召回上下文: \n{context}")
 
     reply = _build_recommendation(user_query, retrieved_docs)
-    trace = state.get("trace", []) + ["🔍 Agent 2 (Sales & RAG)"]
-    return {"messages": state.get("messages", []) + [AIMessage(content=reply)], "trace": trace}
+    trace = state.get("trace", []) + ["🔍 Agent 2 (RAG with Planning Loop)"]
+    
+    # 抽取检索到的文本作为事实核验上下文
+    context_str = "\n".join([doc.page_content for doc in retrieved_docs]) if retrieved_docs else ""
+    return {
+        "messages": state.get("messages", []) + [AIMessage(content=reply)], 
+        "trace": trace,
+        "context": context_str
+    }
