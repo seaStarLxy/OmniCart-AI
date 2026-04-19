@@ -1,4 +1,3 @@
-import pytest
 from main import check_safety, route_decision
 
 def test_check_safety():

@@ -1,5 +1,4 @@
 from langchain_core.tools import tool
-from datetime import datetime, timedelta
 
 @tool
 def check_order_status(order_id: str) -> str:

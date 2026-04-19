@@ -5,7 +5,7 @@ OmniCart-AI 测试场景快速调用工具
 支持 API 直接调用、日志审计、场景组织等。
 """
 
-from typing import Dict, List
+from typing import List
 from dataclasses import dataclass
 from enum import Enum
 

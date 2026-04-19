@@ -1,4 +1,3 @@
-import pytest
 from langchain_core.messages import HumanMessage
 from agents.agent3_order import _translate_text, _format_order_reply, order_node
 from unittest.mock import patch

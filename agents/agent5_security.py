@@ -1,6 +1,4 @@
-import os
 import re
-from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI
 from langchain_core.messages import HumanMessage, SystemMessage, AIMessage
 from core.state import AgentState
@@ -41,7 +39,7 @@ def security_input_node(state: AgentState):
         decision = response.content.strip().upper()
         
         if "UNSAFE" in decision:
-            print(f"  -> [警告] 大模型防火墙拦截了恶意请求！")
+            print("  -> [警告] 大模型防火墙拦截了恶意请求！")
             return {
                 "messages": ["[Security Blocked] Your request contains potentially unsafe or disallowed instructions, so it has been stopped."], 
                 "is_safe": False

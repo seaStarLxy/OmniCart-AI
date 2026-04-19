@@ -1,4 +1,3 @@
-import pytest
 from langchain_core.documents import Document
 from agents.agent2_rag import _build_recommendation, _extract_price, _extract_name
 
