@@ -14,6 +14,9 @@ source .venv/bin/activate
 pip install --upgrade pip
 
 # 核心依赖
-pip install langgraph langchain langchain-openai fastapi uvicorn chromadb pydantic langchain-community
+pip install langgraph langchain langchain-openai fastapi uvicorn chromadb pydantic langchain-community pytest langchain-core
 
-export OPENAI_API_KEY=""
+export SILICONFLOW_API_KEY=""
+
+# 运行所有的测试，并显示详细信息 (-v)
+pytest tests/ -v

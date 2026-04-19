@@ -19,11 +19,12 @@ from agents.agent1_router import triage_router_node
 from agents.agent3_order import order_node
 from agents.agent2_rag import rag_node
 from agents.agent4_empathy import empathy_node
-from agents.agent5_security import security_input_node, security_output_node # 新增
+from agents.agent5_security import security_input_node, security_output_node
 from agents.agent6_fairness import fairness_logging_node
-from test_scenarios import ScenarioLibrary, AgentType  # 新增：场景库
+from test_scenarios import ScenarioLibrary, AgentType
+from core.config import settings
 
-app = FastAPI(title="OmniCart-AI", version="0.3.0")
+app = FastAPI(title=settings.PROJECT_NAME, version=settings.VERSION)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],  
@@ -192,4 +193,4 @@ async def get_scenario_detail(scenario_id: str):
         }
 
 if __name__ == "__main__":
-    uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)
+    uvicorn.run("main:app", host=settings.HOST, port=settings.PORT, reload=True)
