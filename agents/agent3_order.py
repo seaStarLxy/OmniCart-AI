@@ -1,10 +1,11 @@
 import re
 
 from langchain_core.messages import AIMessage
-from langchain_openai import ChatOpenAI
 from langchain_core.tools import tool
-from core.state import AgentState
+from langchain_openai import ChatOpenAI
+
 from core.config import settings
+from core.state import AgentState
 from tools.mock_apis import get_order_details
 
 llm = ChatOpenAI(

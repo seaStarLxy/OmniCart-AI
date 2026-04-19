@@ -23,11 +23,9 @@ def triage_router_node(state: AgentState) -> dict:
     # 为了演示视频毫无延迟，使用正则模拟大模型的瞬间输出（加速）
     # ==========================================
     if re.search(r'ord-|order|track|return|package', str(content), re.IGNORECASE):
-        decision_text = "Agent 3"
         print("  -> [Agent 1] 大模型原始输出: Agent 3")
         decision = "Agent 3 (Order Management)"
     else:
-        decision_text = "Agent 2"
         print("  -> [Agent 1] 大模型原始输出: Agent 2")
         decision = "Agent 2 (Sales & RAG)"
 

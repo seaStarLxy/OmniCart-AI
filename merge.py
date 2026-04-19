@@ -2,6 +2,7 @@ import os
 import shutil
 from pathlib import Path
 
+
 def is_binary(file_path):
     try:
         with open(file_path, 'tr') as check_file:

@@ -1,30 +1,31 @@
-# ==========================================
-# 1. 所有的 import 必须严格放在文件的最上面
-# ==========================================
 import os
 from dotenv import load_dotenv
-# 必须在这最前面加载环境变量，否则 LangSmith 看不到配置
-load_dotenv(os.path.join(os.path.dirname(__file__), '.env'))
 
+# 把所有的 import 都集中放在最上面
 from typing import List, Optional
-
+import uvicorn
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-import uvicorn
-from langgraph.graph import StateGraph, END
-from langchain_core.messages import HumanMessage, AIMessage
+from langchain_core.messages import AIMessage, HumanMessage
+from langgraph.graph import END, StateGraph
 from pydantic import BaseModel
 
-# 引入内部模块
-from core.state import AgentState
-from core.config import settings
 from agents.agent1_router import triage_router_node
 from agents.agent2_rag import rag_node
 from agents.agent3_order import order_node
 from agents.agent4_empathy import empathy_node
 from agents.agent5_security import security_input_node, security_output_node
 from agents.agent6_fairness import fairness_logging_node
-from test_scenarios import ScenarioLibrary, AgentType
+from core.config import settings
+
+from core.state import AgentState
+from test_scenarios import AgentType, ScenarioLibrary
+
+# ⚠️ 注意：把原本在第 105 行的这句 import 也剪切到这里来！
+from langgraph.checkpoint.memory import MemorySaver
+
+
+load_dotenv(os.path.join(os.path.dirname(__file__), '.env'))
 
 # ==========================================
 # 2. 所有 import 结束之后，才能开始写类和变量
@@ -98,7 +99,7 @@ workflow.add_edge("sec_out", "logger")
 workflow.add_edge("logger", END)
 
 # 编译包含会话记忆 (Checkpoint) 机制的图
-from langgraph.checkpoint.memory import MemorySaver
+
 memory_saver = MemorySaver()
 app_graph = workflow.compile(checkpointer=memory_saver)
 

@@ -4,6 +4,7 @@ Run with: python test_speed.py
 Requires the server to be running on 127.0.0.1:8000.
 """
 import time
+
 import requests
 
 BASE = "http://127.0.0.1:8000"
