@@ -3,7 +3,7 @@ import re
 from langchain_core.messages import AIMessage
 
 from core.state import AgentState
-from tools.vector_db import fallback_retrieve_products, product_retriever
+from tools.vector_db import fallback_retrieve_products, get_product_retriever
 
 
 def _extract_price(product_text: str) -> str:
@@ -66,7 +66,8 @@ def rag_node(state: AgentState):
     try:
         retrieved_docs = fallback_retrieve_products(user_query)
         if not retrieved_docs:
-            retrieved_docs = product_retriever.invoke(user_query)
+            retriever = get_product_retriever()
+            retrieved_docs = retriever.invoke(user_query)
     except Exception as error:
         print(f"  -> [Agent 2] Retrieval failed ({error}), using lexical fallback.")
         retrieved_docs = fallback_retrieve_products(user_query)

@@ -68,8 +68,15 @@ def init_mock_vector_db():
     print("  -> [Vector DB] 4. 向量库初始化完成！")
     return vectorstore.as_retriever(search_kwargs={"k": 2})
 
-# 全局单例检索器
-product_retriever = init_mock_vector_db()
+# 懒加载全局单例检索器
+_product_retriever_instance = None
+
+def get_product_retriever():
+    """按需获取检索器单例。只有在第一次真正调用时才会请求大模型。"""
+    global _product_retriever_instance
+    if _product_retriever_instance is None:
+        _product_retriever_instance = init_mock_vector_db()
+    return _product_retriever_instance
 
 
 def fallback_retrieve_products(query: str, k: int = 2):
