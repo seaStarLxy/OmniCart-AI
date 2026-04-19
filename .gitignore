@@ -7,6 +7,6 @@
 *.py[cod]
 *$py.class
 
-all_code_summary.txt
+summary.txt
 
 logs/

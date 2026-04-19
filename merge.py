@@ -1,63 +1,72 @@
 import os
+import shutil
 from pathlib import Path
 
+def is_binary(file_path):
+    try:
+        with open(file_path, 'tr') as check_file:
+            check_file.read(1024)
+            return False
+    except:
+        return True
 
-def merge_python_files(source_dir, output_file, exclude_dirs=None):
-    """
-    将 source_dir 目录下所有的 .py 文件合并到 output_file 中。
+def merge_files(source_dir, output_file, exclude_dirs=None):
+    source_path = Path(source_dir).resolve()
+    output_path = Path(output_file).resolve()
     
-    :param source_dir: 目标根目录
-    :param output_file: 输出文件路径
-    :param exclude_dirs: 要排除的目录名列表（如 ['venv', 'node_modules']）
-    """
-    source_path = Path(source_dir)
-    output_path = Path(output_file)
-    exclude_dirs = set(exclude_dirs) if exclude_dirs else set()
+    # 获取当前运行脚本的绝对路径，防止“我合并我自己”
+    script_path = Path(__file__).resolve()
     
-    # 使用 count 记录合并的文件数量
+    base_excludes = {'venv', '.venv', 'node_modules', '.git', 'frontend'}
+    if exclude_dirs:
+        base_excludes.update(exclude_dirs)
+    
+    output_path.parent.mkdir(parents=True, exist_ok=True)
     merged_count = 0
 
     with output_path.open('w', encoding='utf-8') as outfile:
-        # 使用 os.walk 是因为原地修改 dirs 列表是过滤目录最高效的方式
         for root, dirs, files in os.walk(source_path):
-            # 1. 过滤掉隐藏目录和指定的排除目录
-            # dirs[:] 原地修改会直接影响 os.walk 的后续遍历
-            dirs[:] = [d for d in dirs if not d.startswith('.') and d not in exclude_dirs]
+            rel_root = Path(root).relative_to(source_path)
             
-            for file in files:
-                # 2. 过滤非 .py 文件、隐藏文件以及输出文件本身
-                if not file.endswith('.py') or file.startswith('.') or file == output_path.name:
+            # --- 目录过滤逻辑 ---
+            dirs[:] = [d for d in dirs if d not in base_excludes]
+            
+            # 允许进入 .github/workflows 但过滤掉其他隐藏目录
+            if any(part.startswith('.') for part in rel_root.parts):
+                if not ('.github' in rel_root.parts and 'workflows' in rel_root.parts):
+                    continue
+
+            for file in sorted(files):
+                file_path = (Path(root) / file).resolve()
+                
+                # --- 核心拦截逻辑 ---
+                # 1. 排除输出结果文件本身
+                # 2. 排除正在运行的脚本自己 (merge_tool.py)
+                # 3. 排除二进制文件
+                if file_path == output_path or file_path == script_path or is_binary(file_path):
                     continue
                 
-                file_path = Path(root) / file
-                
-                # 3. 写入文件头信息
+                rel_path = file_path.relative_to(source_path)
+
                 outfile.write(f"\n{'='*60}\n")
-                outfile.write(f"FILE: {file_path.relative_to(source_path)}\n")
+                outfile.write(f"FILE: {rel_path}\n")
                 outfile.write(f"{'='*60}\n\n")
                 
                 try:
-                    with file_path.open('r', encoding='utf-8') as infile:
-                        outfile.write(infile.read())
-                        outfile.write("\n\n")
-                    print(f"✅ 已合并: {file_path}")
+                    with file_path.open('r', encoding='utf-8', errors='replace') as infile:
+                        shutil.copyfileobj(infile, outfile)
+                    outfile.write("\n\n")
+                    print(f"✅ 已合并: {rel_path}")
                     merged_count += 1
                 except Exception as e:
-                    print(f"❌ 读取错误 {file_path}: {e}")
+                    print(f"❌ 跳过: {rel_path} ({e})")
 
     return merged_count
 
 if __name__ == "__main__":
-    # 配置
-    target_dir = "." 
-    result_file = "all_code_summary.txt"
-    # 在这里添加你想排除的目录
-    ignore = ["venv", ".venv", "env", "__pycache__", "build", "dist", "frontend"]
+    TARGET = os.getenv("TARGET_DIR", ".")
+    OUTPUT = os.getenv("OUTPUT_FILE", "summary.txt")
     
-    print(f"开始扫描目录: {os.path.abspath(target_dir)}\n")
-    
-    count = merge_python_files(target_dir, result_file, exclude_dirs=ignore)
-    
-    print(f"\n{'*'*30}")
-    print(f"合并完成！共处理 {count} 个 Python 文件。")
-    print(f"结果已保存至: {result_file}")
+    print(f"🚀 开始合并 (包含 CI/CD 配置，排除 frontend，且排除脚本自身)...")
+    count = merge_files(TARGET, OUTPUT)
+    print(f"\n✨ 完成！共处理 {count} 个文件。")
