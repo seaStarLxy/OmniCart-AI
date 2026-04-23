@@ -33,7 +33,7 @@ jobs:
     # 4. 代码规范检查 (Lint)
     - name: Lint with Ruff
       run: |
-        # 检查所有代码，遇到错误会使流水线失败
+        # 检查所有代码，遇到错误会使流水线失败 
         ruff check .
 
     # 5. 代码安全扫描 (SAST)
