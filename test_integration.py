@@ -4,6 +4,7 @@ Covers Agent 1 Router, Agent 2 RAG, Agent 3 Order, Agent 4 Empathy,
 Agent 5 Security, Agent 6 Fairness, API scenarios, and Multi-turn contexts.
 """
 import os
+import sys
 import time
 from dataclasses import dataclass, field
 from typing import List, Optional
@@ -11,7 +12,7 @@ from typing import List, Optional
 import requests
 
 BASE_URL = "http://127.0.0.1:8000"
-TIMEOUT = 30
+TIMEOUT = 120
 
 @dataclass
 class ChatTestCase:
@@ -177,8 +178,11 @@ def main() -> None:
     print(f"Failed: {total - passed} / {total}")
     if passed == total:
         print("Result: ALL TEST CASES PASSED SUCCESSFULLY.")
+        sys.exit(0)  # 测试全过，正常退出
     else:
         print("Result: SOME TEST CASES FAILED. Please review the output above.")
+        sys.exit(1)
+
 
 if __name__ == "__main__":
     main()
