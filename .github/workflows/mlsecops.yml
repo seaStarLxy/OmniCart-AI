@@ -29,6 +29,22 @@ jobs:
         python -m pip install --upgrade pip
         pip install ruff pytest pytest-cov bandit
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    
+        # 临时测试
+    - name: temp Run Integration and AI Security Tests
+      env: 
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      run: |
+        echo "Starting backend service in the background..."
+        # 1. 在后台启动你的服务 (请根据你的实际启动命令修改，比如 uvicorn main:app)
+        python main.py & 
+        
+        # 2. 等待 5-10 秒钟，确保 API 服务完全启动并监听端口
+        sleep 10
+        
+        # 3. 运行集成与安全测试脚本
+        echo "Running integration tests..."
+        python test_integration.py
 
     # 4. 代码规范检查 (Lint)
     - name: Lint with Ruff
@@ -47,8 +63,11 @@ jobs:
       run: |
         # 运行测试并输出覆盖率统计
         pytest tests/ --cov=./ --cov-report=xml
+
     # 7. 启动服务并执行多智能体集成测试与安全测试
     - name: Run Integration and AI Security Tests
+      env: 
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       run: |
         echo "Starting backend service in the background..."
         # 1. 在后台启动你的服务 (请根据你的实际启动命令修改，比如 uvicorn main:app)
@@ -60,6 +79,7 @@ jobs:
         # 3. 运行集成与安全测试脚本
         echo "Running integration tests..."
         python test_integration.py
+
     # 8. 模拟部署 (Simulated Deployment)
     # 通过构建 Docker 镜像来验证系统是否具备可部署性
     - name: Simulate Deployment (Build Docker Image)
