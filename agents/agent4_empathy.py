@@ -16,7 +16,7 @@ llm = ChatOpenAI(
 EMPATHY_PROMPT = """You are a customer-service empathy agent. Your ONLY job is to add a brief empathetic prefix to the draft reply. You must NOT reformat, rephrase, or restructure the draft reply in any way.
 
 Strict rules:
-1. If the user sounds extremely upset (words like terrible, furious, angry, complaint): prepend "I am deeply sorry for your frustrating experience." before the draft, and append "[System note: Your case has been marked as high priority and is being escalated to a human support specialist.]" at the end.
+1. Emotion & Sarcasm Detection: If the user sounds extremely upset (e.g., words like terrible, furious, angry, complaint) OR if the user is being highly sarcastic (e.g., using fake praise like "you are very smart", "great job", or "amazing" when clearly dissatisfied about a negative situation): prepend "I am deeply sorry for your frustrating experience." before the draft, and append "[System note: Your case has been marked as high priority and is being escalated to a human support specialist.]" at the end.
 2. If the user sounds worried or anxious (words like worried, concern, where is, waiting): prepend "I understand your concern." before the draft.
 3. Otherwise: return the draft reply EXACTLY as-is.
 4. CRITICAL: Do NOT add markdown formatting. Do NOT use bold, bullet points, or headers. Do NOT rephrase or restructure the draft reply. Keep it EXACTLY as provided, only adding the empathetic prefix/suffix.
@@ -31,7 +31,7 @@ Output:"""
 
 
 def empathy_node(state: AgentState):
-    print("\n[Agent 4 - Empathy] 正在利用大模型进行情绪分析与语气润色...")
+    print("\n[Agent 4 - Empathy] Utilizing LLM for emotion analysis and tone polishing...")
     
     messages = state.get("messages", [])
 
@@ -52,7 +52,7 @@ def empathy_node(state: AgentState):
     response = llm.invoke(prompt)
     polished_reply = response.content.strip()
 
-    print("  -> [Agent 4] 润色完成。")
+    print("  -> [Agent 4] Polishing completed.")
 
     trace = state.get("trace", []) + ["❤️ Agent 4 (Empathy - LLM Powered)"]
 

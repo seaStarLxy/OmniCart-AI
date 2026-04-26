@@ -66,6 +66,9 @@ def _translate_text(text: str) -> str:
 
 
 def _format_order_reply(order_id: str, order_info: dict) -> str:
+    if "auth_error" in order_info:
+        return f"I'm sorry, but for security and privacy reasons, I cannot provide information for order {order_id} as it is registered to a different account."
+    
     if not order_info:
         return f"I could not find order {order_id}. Please verify the order ID format, for example: ORD-20260418-001."
 
@@ -111,7 +114,7 @@ def _format_order_reply(order_id: str, order_info: dict) -> str:
     return "\n".join(lines)
 
 def order_node(state: AgentState):
-    print("\n[Agent 3 - Order Management] 接管对话，启动 ReAct 规划与工具调用循环...")
+    print("\n[Agent 3 - Order Management] Taking over conversation, starting ReAct planning and tool loop...")
     messages = state.get("messages", [])
     
     # ==========================================
@@ -130,27 +133,27 @@ def order_node(state: AgentState):
     
     if not order_match:
         # ReAct 推理结论：缺少参数，无法调用工具，直接回复
-        print("  -> [Agent 3 思考] 用户未提供订单号，无法调用工具，要求用户补充信息。")
+        print("  -> [Agent 3 Thought] User did not provide an order ID, cannot call tool. Requesting more information.")
         fallback = AIMessage(content="I can help with that. Please provide the order ID, for example: ORD-20260417-002.")
         trace = state.get("trace", []) + ["📦 Agent 3 (ReAct - Need More Info)"]
         return {"messages": messages + [fallback], "trace": trace}
     
     order_id = order_match.group(1).upper()
-    print(f"  -> [Agent 3 思考] 识别到订单号 {order_id}，我需要调用工具获取订单详情。")
+    print(f"  -> [Agent 3 Thought] Identified order ID {order_id}, need to call tool to fetch order details.")
     
     # ==========================================
     # ReAct Step 2: ACT — 调用工具获取事实数据
     # ==========================================
-    print(f"  -> [Agent 3 工具调用] Executing _get_order_tool(order_id='{order_id}')")
+    print(f"  -> [Agent 3 Tool Call] Executing _get_order_tool(order_id='{order_id}')")
     tool_result = get_order_details(order_id)
     context_data = str(tool_result)
-    print(f"  -> [Agent 3 观察] 工具返回数据: {context_data}")
+    print(f"  -> [Agent 3 Observation] Tool returned data: {context_data}")
     
     # ==========================================
     # ReAct Step 3: OBSERVE & RESPOND — 根据事实数据生成结构化回复
     # ==========================================
     reply = _format_order_reply(order_id, tool_result)
-    print("  -> [Agent 3 结论] 基于工具返回的事实数据，生成最终结构化回复。")
+    print("  -> [Agent 3 Conclusion] Generating final structured reply based on factual data returned by the tool.")
     
     final_output = AIMessage(content=reply)
     trace = state.get("trace", []) + ["📦 Agent 3 (Order - ReAct Loop)"]

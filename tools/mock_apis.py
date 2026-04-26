@@ -4,7 +4,7 @@ from langchain_core.tools import tool
 @tool
 def check_order_status(order_id: str) -> str:
     """当用户询问订单、物流状态、退换政策时使用此工具。必须传入订单号 order_id。"""
-    print(f"  -> [Mock API] 正在查询数据库，订单号: {order_id}")
+    print(f"  -> [Mock API] Querying database for order ID: {order_id}")
     
     # 丰富的模拟订单数据库，涵盖不同状态和场景
     mock_db = {
@@ -89,8 +89,8 @@ def check_order_status(order_id: str) -> str:
             "message": "您的售后申请已提交，评分：高优先级（需要更换）。我们的客服专员正在处理，预计2小时内联系您确认收货地址。"
         },
         
-        # ========== 超时订单 ==========
         "ORD-20260301-008": {
+            "owner_id": "user456",
             "status": "异常",
             "items": "无线充电器 × 1",
             "price": 179.00,
@@ -103,6 +103,8 @@ def check_order_status(order_id: str) -> str:
     # 查询逻辑：支持精确匹配或模糊查询
     if order_id in mock_db:
         order_info = mock_db[order_id]
+        if order_info.get("owner_id", "user123") != "user123":
+            return '{"auth_error": "Authentication Failed: This order does not belong to the current user."}'
         return order_info.get("message", "订单信息已返回")
     else:
         # 尝试模糊匹配（如果输入不是完整订单号）
@@ -186,6 +188,7 @@ def get_order_details(order_id: str) -> dict:
             "message": "您的售后申请已提交，评分：高优先级（需要更换）。我们的客服专员正在处理，预计2小时内联系您确认收货地址。"
         },
         "ORD-20260301-008": {
+            "owner_id": "user456",
             "status": "异常",
             "items": "无线充电器 × 1",
             "price": 179.00,
@@ -194,4 +197,9 @@ def get_order_details(order_id: str) -> dict:
             "message": "抱歉，该订单号可能已过期（超过90天）或存在数据异常。请核实订单号，或直接联系人工客服（400-xxx-xxxx）处理历史订单。"
         }
     }
-    return mock_db.get(order_id, {})
+    order = mock_db.get(order_id, {})
+    if not order:
+        return {}
+    if order.get("owner_id", "user123") != "user123":
+        return {"auth_error": "Authentication Failed: This order does not belong to the current user."}
+    return order
